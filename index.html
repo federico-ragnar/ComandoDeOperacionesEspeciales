@@ -22,14 +22,13 @@ body{
 
     background:#090909;
     color:white;
-    font-family:'Arial', sans-serif;
+    font-family:Arial, Helvetica, sans-serif;
 
 }
 
 
 
-/* ================= MENU LATERAL ================= */
-
+/* MENU LATERAL */
 
 .menu{
 
@@ -48,30 +47,30 @@ body{
 
     border-right:2px solid #c9a227;
 
-    padding-top:30px;
-
-    z-index:1000;
+    padding-top:25px;
 
 }
-
 
 
 .menu .logo{
 
     width:120px;
+
     display:block;
+
     margin:auto;
+
 }
 
 
 
 .menu h2{
 
-    text-align:center;
     color:#c9a227;
-    margin:20px 0;
 
-    font-size:20px;
+    text-align:center;
+
+    margin:20px;
 
 }
 
@@ -80,15 +79,16 @@ body{
 .menu button{
 
     width:90%;
-    margin:8px 5%;
+
+    margin:7px 5%;
 
     padding:15px;
 
     background:#111;
 
-    color:white;
-
     border:1px solid #444;
+
+    color:white;
 
     cursor:pointer;
 
@@ -110,7 +110,9 @@ body{
 
 
 
-/* ================= CONTENIDO ================= */
+
+
+/* CONTENIDO */
 
 
 .contenido{
@@ -148,6 +150,7 @@ body{
 from{
 
 opacity:0;
+
 transform:translateY(20px);
 
 }
@@ -155,6 +158,7 @@ transform:translateY(20px);
 to{
 
 opacity:1;
+
 transform:translateY(0);
 
 }
@@ -165,14 +169,11 @@ transform:translateY(0);
 
 
 
-/* ================= TITULOS ================= */
-
-
 h1{
 
-    color:#c9a227;
-
     text-align:center;
+
+    color:#c9a227;
 
     font-size:38px;
 
@@ -185,8 +186,6 @@ h1{
 h2{
 
     color:#c9a227;
-
-    margin-bottom:15px;
 
 }
 
@@ -202,7 +201,7 @@ p{
 
 
 
-/* ================= INICIO ================= */
+/* INICIO */
 
 
 .banner{
@@ -212,8 +211,6 @@ p{
     max-height:450px;
 
     object-fit:cover;
-
-    border-bottom:3px solid #c9a227;
 
 }
 
@@ -233,17 +230,19 @@ p{
 
 .presentacion{
 
-    text-align:center;
-
     max-width:1000px;
 
     margin:auto;
+
+    text-align:center;
 
 }
 
 
 
-/* ================= ESTADO MAYOR ================= */
+
+
+/* ESTADO MAYOR */
 
 
 .estado{
@@ -252,7 +251,7 @@ p{
 
     justify-content:center;
 
-    gap:50px;
+    gap:40px;
 
     flex-wrap:wrap;
 
@@ -284,7 +283,10 @@ p{
 
 
 
-/* ================= BLOQUES COE ================= */
+
+
+
+/* BLOQUES */
 
 
 .bloque{
@@ -303,26 +305,18 @@ p{
 
 
 
-.bloque h2{
-
-    border-bottom:1px solid #c9a227;
-
-    padding-bottom:10px;
-
-}
 
 
-
-/* ================= VALORES ================= */
+/* VALORES */
 
 
 .valores{
 
-    display:grid;
+display:grid;
 
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
 
-    gap:20px;
+gap:20px;
 
 }
 
@@ -330,26 +324,28 @@ p{
 
 .valor{
 
-    background:#161616;
+background:#161616;
 
-    border:1px solid #c9a227;
+border:1px solid #c9a227;
 
-    padding:20px;
+padding:20px;
 
 }
 
 
 
-/* ================= MANUALES ================= */
+
+
+/* MANUALES */
 
 
 .manuales{
 
-    display:grid;
+display:grid;
 
-    grid-template-columns:repeat(auto-fit,minmax(350px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(350px,1fr));
 
-    gap:30px;
+gap:30px;
 
 }
 
@@ -357,13 +353,13 @@ p{
 
 .manual{
 
-    background:#151515;
+background:#151515;
 
-    border:2px solid #c9a227;
+border:2px solid #c9a227;
 
-    padding:20px;
+padding:20px;
 
-    text-align:center;
+text-align:center;
 
 }
 
@@ -371,11 +367,11 @@ p{
 
 .manual img{
 
-    width:100%;
+width:100%;
 
-    height:400px;
+height:400px;
 
-    object-fit:contain;
+object-fit:contain;
 
 }
 
@@ -383,46 +379,46 @@ p{
 
 .manual button{
 
-    margin-top:15px;
+margin-top:15px;
 
-    padding:12px 25px;
+padding:12px 25px;
 
-    background:#556b2f;
+background:#556b2f;
 
-    color:white;
+color:white;
 
-    border:none;
+border:none;
 
-    cursor:pointer;
+cursor:pointer;
 
 }
-
 
 
 .manual button:hover{
 
-    background:#718b3c;
+background:#718b3c;
 
 }
 
 
 
-/* ================= BOTON INGRESO ================= */
-
+/* BOTONES */
 
 .boton{
 
-    display:inline-block;
+display:inline-block;
 
-    padding:18px 35px;
+padding:18px 35px;
 
-    background:#556b2f;
+background:#556b2f;
 
-    color:white;
+color:white;
 
-    text-decoration:none;
+text-decoration:none;
 
-    margin-top:25px;
+margin-top:25px;
+
+font-weight:bold;
 
 }
 
@@ -430,24 +426,26 @@ p{
 
 .boton:hover{
 
-    background:#718b3c;
+background:#718b3c;
 
 }
 
 
 
-/* ================= CELULAR ================= */
 
+
+/* RESPONSIVE */
 
 @media(max-width:800px){
 
+
 .menu{
 
-    position:relative;
+position:relative;
 
-    width:100%;
+width:100%;
 
-    height:auto;
+height:auto;
 
 }
 
@@ -455,19 +453,22 @@ p{
 
 .contenido{
 
-    margin-left:0;
+margin-left:0;
 
 }
+
 
 
 .seccion{
 
-    padding:30px 15px;
+padding:30px 15px;
 
 }
 
 
 }
+
+
 
 </style>
 
@@ -475,7 +476,14 @@ p{
 </head>
 
 
+
 <body>
+
+
+
+
+
+<!-- MENU LATERAL -->
 
 
 <div class="menu">
@@ -484,7 +492,10 @@ p{
 <img src="./assets/images/logo.png" class="logo">
 
 
-<h2>COE</h2>
+<h2>
+COE
+</h2>
+
 
 
 <button onclick="mostrar('inicio')">
@@ -512,6 +523,11 @@ p{
 </button>
 
 
+<button onclick="window.location.href='macros.html'">
+⌨️ Macros
+</button>
+
+
 <button onclick="mostrar('ingreso')">
 📝 Ingreso
 </button>
@@ -525,8 +541,23 @@ p{
 </div>
 
 
+
+
+
+
+
+<!-- CONTENIDO -->
+
+
 <div class="contenido">
-    <!-- ================= INICIO ================= -->
+
+
+
+
+
+
+<!-- INICIO -->
+
 
 <div id="inicio" class="seccion activa">
 
@@ -540,6 +571,7 @@ p{
 
 <div class="presentacion">
 
+
 <h1>
 Comando de Operaciones Especiales
 </h1>
@@ -550,13 +582,13 @@ Honor • Disciplina • Sacrificio
 </h2>
 
 
+
 <p>
 
 El Comando de Operaciones Especiales (COE) representa la unidad de
-élite del Ejército de Santa Cruz, conformada por personal altamente
-preparado para responder ante misiones de máxima exigencia,
-manteniendo siempre los principios de disciplina, liderazgo y
-compromiso institucional.
+élite del Ejército de Santa Cruz, preparada para responder ante
+misiones de alta exigencia mediante disciplina, liderazgo y precisión
+operativa.
 
 </p>
 
@@ -570,7 +602,10 @@ compromiso institucional.
 
 
 
-<!-- ================= ESTADO MAYOR ================= -->
+
+
+
+<!-- ESTADO MAYOR -->
 
 
 <div id="estado" class="seccion">
@@ -579,6 +614,7 @@ compromiso institucional.
 <h1>
 Estado Mayor COE
 </h1>
+
 
 
 <div class="estado">
@@ -618,7 +654,10 @@ Segundo Comando
 
 
 
-<!-- ================= SOBRE COE ================= -->
+
+
+
+<!-- SOBRE COE -->
 
 
 <div id="sobre" class="seccion">
@@ -639,15 +678,20 @@ Sobre el COE
 
 <p>
 
-El Comando de Operaciones Especiales (COE) fue creado como la unidad de élite del Ejército de Santa Cruz, con el propósito de responder a aquellas misiones que requieren un alto nivel de preparación, coordinación y precisión operativa.
+El Comando de Operaciones Especiales (COE) fue creado como la unidad
+de élite del Ejército de Santa Cruz, con el propósito de responder a
+misiones que requieren un alto nivel de preparación, coordinación y
+precisión operativa.
 
-Su nacimiento respondió a la necesidad de contar con un grupo de soldados capaces de afrontar situaciones de alto riesgo, donde la disciplina, el liderazgo y el trabajo en equipo fueran determinantes para el éxito de cada operación.
-
-Desde su fundación, el COE mantiene un compromiso permanente con la excelencia, estableciendo rigurosos estándares de selección y entrenamiento para garantizar que sus integrantes estén preparados para escenarios complejos.
+Desde su fundación, el COE mantiene un compromiso permanente con la
+excelencia, estableciendo rigurosos estándares de selección y
+entrenamiento para garantizar que sus integrantes estén preparados
+para escenarios complejos.
 
 </p>
 
 </div>
+
 
 
 
@@ -662,18 +706,15 @@ Desde su fundación, el COE mantiene un compromiso permanente con la excelencia,
 
 <p>
 
-El Comando de Operaciones Especiales (COE) tiene como misión planificar,
-coordinar y ejecutar operaciones de alta complejidad que demanden un
-elevado nivel de preparación táctica, disciplina y profesionalismo.
-
-Su propósito es brindar apoyo al Ejército de Santa Cruz en situaciones
-de riesgo, garantizando el cumplimiento de cada misión mediante el
-trabajo en equipo, liderazgo y compromiso absoluto con la institución.
+Planificar, coordinar y ejecutar operaciones de alta complejidad que
+demanden preparación táctica, disciplina y profesionalismo,
+brindando apoyo al Ejército de Santa Cruz en situaciones de riesgo.
 
 </p>
 
 
 </div>
+
 
 
 
@@ -690,15 +731,13 @@ trabajo en equipo, liderazgo y compromiso absoluto con la institución.
 <p>
 
 Consolidarse como la unidad de operaciones especiales de referencia
-dentro del Ejército de Santa Cruz, reconocida por la excelencia de su
-entrenamiento, capacidad de respuesta y cumplimiento eficaz de cada
-misión.
+dentro del Ejército de Santa Cruz, reconocida por la excelencia de
+su entrenamiento y capacidad de respuesta.
 
 </p>
 
 
 </div>
-
 
 
 
@@ -716,90 +755,51 @@ misión.
 
 
 <div class="valor">
-
 <b>Honor</b>
-
-<p>
-Actuar con integridad, honestidad y respeto.
-</p>
-
+<br>
+Actuar con integridad y responsabilidad.
 </div>
 
 
-
 <div class="valor">
-
 <b>Disciplina</b>
-
-<p>
-Cumplir órdenes, procedimientos y normas institucionales.
-</p>
-
+<br>
+Cumplir órdenes y normas institucionales.
 </div>
 
 
-
-
 <div class="valor">
-
 <b>Sacrificio</b>
-
-<p>
+<br>
 Anteponer el deber y la misión.
-</p>
-
 </div>
 
 
-
 <div class="valor">
-
 <b>Lealtad</b>
-
-<p>
-Fidelidad a la institución y compañeros.
-</p>
-
+<br>
+Fidelidad al COE y la institución.
 </div>
 
 
-
 <div class="valor">
-
 <b>Profesionalismo</b>
-
-<p>
-Preparación, criterio y responsabilidad.
-</p>
-
+<br>
+Preparación y responsabilidad.
 </div>
 
 
-
 <div class="valor">
-
 <b>Trabajo en Equipo</b>
-
-<p>
-Coordinación y cooperación entre integrantes.
-</p>
-
+<br>
+Cooperación entre integrantes.
 </div>
-
 
 
 <div class="valor">
-
 <b>Excelencia</b>
-
-<p>
-Superación y mejora constante.
-</p>
-
-</div>
-
-
-
+<br>
+Mejora y superación constante.
 </div>
 
 
@@ -809,12 +809,17 @@ Superación y mejora constante.
 </div>
 
 
+</div>
 
 
 
 
 
-<!-- ================= ESTRUCTURA ================= -->
+
+
+
+
+<!-- ESTRUCTURA -->
 
 
 <div id="estructura" class="seccion">
@@ -830,8 +835,7 @@ Estructura del COE
 
 <p>
 
-Organización, jerarquías y estructura interna del
-Comando de Operaciones Especiales.
+Organización y jerarquías internas del Comando de Operaciones Especiales.
 
 </p>
 
@@ -851,7 +855,8 @@ Comando de Operaciones Especiales.
 
 
 
-<!-- ================= MANUALES ================= -->
+
+<!-- MANUALES -->
 
 
 <div id="manuales" class="seccion">
@@ -860,7 +865,6 @@ Comando de Operaciones Especiales.
 <h1>
 Manuales y Documentación
 </h1>
-
 
 
 <div class="manuales">
@@ -875,17 +879,11 @@ Manuales y Documentación
 Rangos
 </h2>
 
-
 <button onclick="abrirImagen('./assets/images/rangos.png')">
-
 VER MANUAL
-
 </button>
 
-
 </div>
-
-
 
 
 
@@ -898,17 +896,11 @@ VER MANUAL
 Secuestro
 </h2>
 
-
 <button onclick="abrirImagen('./assets/images/secuestro.png')">
-
 VER MANUAL
-
 </button>
 
-
 </div>
-
-
 
 
 
@@ -921,17 +913,11 @@ VER MANUAL
 Blindados
 </h2>
 
-
 <button onclick="abrirImagen('./assets/images/blindado.png')">
-
 VER MANUAL
-
 </button>
 
-
 </div>
-
-
 
 
 
@@ -944,34 +930,26 @@ VER MANUAL
 Atentado
 </h2>
 
-
 <button onclick="abrirImagen('./assets/images/atentado.png')">
-
 VER MANUAL
-
 </button>
 
-
-</div>
-
-
-
 </div>
 
 
 </div>
 
 
-
-
-<button onclick="window.location.href='macros.html'">
-⌨️ Macros
-</button>
+</div>
 
 
 
 
-<!-- ================= INGRESO ================= -->
+
+
+
+
+<!-- INGRESO -->
 
 
 <div id="ingreso" class="seccion">
@@ -989,9 +967,8 @@ Ingreso al COE
 <p>
 
 El proceso de incorporación al Comando de Operaciones Especiales
-está destinado a integrantes del Ejército de Santa Cruz que demuestren
-compromiso, disciplina y disposición para formar parte de una unidad
-de alto rendimiento.
+está destinado a quienes demuestren compromiso, disciplina y
+disposición para formar parte de una unidad de alto rendimiento.
 
 </p>
 
@@ -1018,7 +995,7 @@ SOLICITAR INGRESO AL COE
 
 
 
-<!-- ================= GALERIA ================= -->
+<!-- GALERIA -->
 
 
 <div id="galeria" class="seccion">
@@ -1031,12 +1008,9 @@ Galería
 
 <div class="bloque">
 
-
 <p>
-
-Próximamente se incorporarán imágenes de entrenamientos,
-operaciones, ceremonias y actividades del COE.
-
+Próximamente se agregarán imágenes de entrenamientos,
+operaciones y actividades del COE.
 </p>
 
 
@@ -1049,8 +1023,9 @@ operaciones, ceremonias y actividades del COE.
 
 
 
-
 </div>
+
+
 
 
 
@@ -1081,16 +1056,19 @@ document.getElementById(id).classList.add("activa");
 
 
 
+
 function abrirImagen(imagen){
 
 
-window.open(imagen, "_blank");
+window.open(imagen,"_blank");
 
 
 }
 
 
 </script>
+
+
 
 
 
