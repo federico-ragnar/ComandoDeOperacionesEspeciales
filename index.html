@@ -1,110 +1,186 @@
 <!DOCTYPE html>
+
 <html lang="es">
+
 
 <head>
 
+
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>COE | Comando de Operaciones Especiales</title>
+
+<title>
+COE | Comando de Operaciones Especiales
+</title>
+
 
 
 <style>
 
+
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
 
+margin:0;
 
-body{
+padding:0;
 
-    background:#090909;
-    color:white;
-    font-family:Arial, Helvetica, sans-serif;
+box-sizing:border-box;
 
 }
 
 
 
-/* MENU LATERAL */
+html,body{
+
+width:100%;
+
+min-height:100%;
+
+background:#080808;
+
+color:white;
+
+font-family:Arial, Helvetica, sans-serif;
+
+overflow-x:hidden;
+
+}
+
+
+
+
+
+/* ==========================
+   MENU LATERAL
+========================== */
+
 
 .menu{
 
-    position:fixed;
-    left:0;
-    top:0;
-    width:260px;
-    height:100vh;
 
-    background:
-    linear-gradient(
-    180deg,
-    #182018,
-    #080808
-    );
+position:fixed;
 
-    border-right:2px solid #c9a227;
+top:0;
 
-    padding-top:25px;
+left:0;
+
+
+width:260px;
+
+height:100vh;
+
+
+background:
+
+linear-gradient(
+
+180deg,
+
+#182018,
+
+#080808
+
+);
+
+
+border-right:
+
+2px solid #c9a227;
+
+
+padding-top:25px;
+
+
+z-index:10;
+
 
 }
+
+
+
 
 
 .menu .logo{
 
-    width:120px;
 
-    display:block;
+width:120px;
 
-    margin:auto;
+display:block;
+
+margin:auto;
+
 
 }
+
+
 
 
 
 .menu h2{
 
-    color:#c9a227;
 
-    text-align:center;
+text-align:center;
 
-    margin:20px;
+color:#c9a227;
+
+margin:20px 0;
+
 
 }
+
+
 
 
 
 .menu button{
 
-    width:90%;
 
-    margin:7px 5%;
+width:90%;
 
-    padding:15px;
+margin:7px 5%;
 
-    background:#111;
 
-    border:1px solid #444;
+padding:15px;
 
-    color:white;
 
-    cursor:pointer;
+background:#111;
 
-    text-align:left;
 
-    font-weight:bold;
+border:
+
+1px solid #444;
+
+
+color:white;
+
+
+cursor:pointer;
+
+
+text-align:left;
+
+
+font-weight:bold;
+
+
+transition:.3s;
+
 
 }
+
+
 
 
 
 .menu button:hover{
 
-    background:#556b2f;
 
-    border-color:#c9a227;
+background:#556b2f;
+
+border-color:#c9a227;
+
 
 }
 
@@ -112,48 +188,72 @@ body{
 
 
 
-/* CONTENIDO */
+
+
+/* ==========================
+   CONTENIDO
+========================== */
 
 
 .contenido{
 
-    margin-left:260px;
 
-    min-height:100vh;
+margin-left:260px;
+
+min-height:100vh;
+
 
 }
+
+
 
 
 
 .seccion{
 
-    display:none;
 
-    padding:50px;
+display:none;
 
-    animation:entrada .5s;
+
+padding:50px;
+
+
+min-height:100vh;
+
+
+animation:
+
+aparecer .5s ease;
+
 
 }
 
 
 
-.activa{
 
-    display:block;
+
+.seccion.activa{
+
+
+display:block;
+
 
 }
 
 
 
-@keyframes entrada{
+
+@keyframes aparecer{
+
 
 from{
 
 opacity:0;
 
-transform:translateY(20px);
+transform:translateY(15px);
 
 }
+
 
 to{
 
@@ -163,7 +263,10 @@ transform:translateY(0);
 
 }
 
+
 }
+
+
 
 
 
@@ -171,200 +274,184 @@ transform:translateY(0);
 
 h1{
 
-    text-align:center;
 
-    color:#c9a227;
+text-align:center;
 
-    font-size:38px;
 
-    margin-bottom:30px;
+font-size:38px;
+
+
+color:#c9a227;
+
+
+margin-bottom:30px;
+
 
 }
+
+
 
 
 
 h2{
 
-    color:#c9a227;
+
+color:#c9a227;
+
 
 }
+
+
 
 
 
 p{
 
-    line-height:1.8;
 
-    font-size:18px;
+font-size:18px;
 
-}
+line-height:1.8;
 
-/* FONDO TACTICO ANIMADO */
-
-#inicio{
-
-position:relative;
-
-min-height:100vh;
-
-overflow:hidden;
-
-}
-
-
-#inicio::before{
-
-content:"";
-
-position:absolute;
-
-top:0;
-left:0;
-
-width:200%;
-height:200%;
-
-background:
-radial-gradient(circle at 20% 30%, rgba(201,162,39,0.12), transparent 30%),
-radial-gradient(circle at 80% 70%, rgba(85,107,47,0.18), transparent 35%),
-linear-gradient(
-120deg,
-#050505,
-#111,
-#050505
-);
-
-animation:fondoMovimiento 15s infinite alternate;
-
-z-index:0;
 
 }
 
 
 
-@keyframes fondoMovimiento{
-
-0%{
-
-transform:translate(0,0);
-
-}
-
-
-100%{
-
-transform:translate(-5%,-5%);
-
-}
-
-}
 
 
 
-#inicio > *{
-
-position:relative;
-
-z-index:1;
-
-}
-
-/* INICIO */
 
 
-    /* ==========================
-   PORTADA COE ANIMADA
+
+/* ==========================
+   PORTADA COE
 ========================== */
 
 
 #inicio{
 
+
 position:relative;
-min-height:100vh;
-overflow:hidden;
+
 
 display:flex;
+
+
+justify-content:center;
+
+
 align-items:center;
+
+
+text-align:center;
+
+
+overflow:hidden;
+
 
 }
 
 
-/* HUMO TÁCTICO */
+
+
+
+/* HUMO */
+
 
 #inicio::before{
 
+
 content:"";
+
 
 position:absolute;
 
-width:180%;
-height:180%;
 
-top:-40%;
-left:-40%;
+top:-50%;
+
+left:-50%;
+
+
+width:200%;
+
+height:200%;
 
 
 background:
 
+
 radial-gradient(
+
 circle at 30% 40%,
-rgba(120,120,120,0.18),
-transparent 25%
-),
 
-radial-gradient(
-circle at 70% 60%,
-rgba(85,107,47,0.20),
+rgba(150,150,150,.15),
+
 transparent 30%
+
 ),
 
+
 radial-gradient(
+
+circle at 70% 60%,
+
+rgba(85,107,47,.20),
+
+transparent 35%
+
+),
+
+
+radial-gradient(
+
 circle at 50% 50%,
-rgba(201,162,39,0.08),
-transparent 20%
+
+rgba(201,162,39,.10),
+
+transparent 25%
+
 );
 
 
-filter:blur(35px);
+
+filter:blur(45px);
 
 
-animation:humoCOE 25s infinite alternate;
+
+animation:
+
+movimientoHumo 25s infinite alternate;
+
 
 
 z-index:0;
 
+
 }
 
 
 
-@keyframes humoCOE{
+
+@keyframes movimientoHumo{
 
 
 0%{
 
+
 transform:translate(0,0) scale(1);
 
-opacity:.6;
-
-}
-
-
-50%{
-
-transform:translate(5%,3%) scale(1.1);
-
-opacity:.8;
 
 }
 
 
 100%{
 
-transform:translate(-5%,5%) scale(1);
 
-opacity:.6;
+transform:translate(-5%,5%) scale(1.1);
+
 
 }
+
 
 
 }
@@ -375,9 +462,12 @@ opacity:.6;
 
 #inicio > *{
 
+
 position:relative;
 
-z-index:2;
+
+z-index:1;
+
 
 }
 
@@ -385,19 +475,51 @@ z-index:2;
 
 
 
-/* LOGO */
+.banner{
+
+
+width:100%;
+
+
+max-height:400px;
+
+
+object-fit:cover;
+
+
+border-bottom:
+
+2px solid #c9a227;
+
+
+}
+
+
+
+
+
+
 
 .logo_inicio{
 
+
 width:220px;
+
+
+margin:35px auto;
+
 
 display:block;
 
-margin:40px auto;
-
 
 filter:
-drop-shadow(0 0 20px #c9a227);
+
+drop-shadow(
+
+0 0 20px #c9a227
+
+);
+
 
 
 animation:
@@ -410,35 +532,51 @@ entradaLogo 2s ease;
 
 
 
+
 @keyframes entradaLogo{
 
 
 0%{
 
+
 opacity:0;
 
 transform:scale(.5);
 
+
 }
 
 
-
 100%{
+
 
 opacity:1;
 
 transform:scale(1);
 
-}
-
 
 }
 
 
+}
 
 
 
-/* TITULO */
+
+
+.presentacion{
+
+
+max-width:1000px;
+
+
+margin:auto;
+
+
+}
+
+
+
 
 
 .presentacion h1{
@@ -446,10 +584,11 @@ transform:scale(1);
 
 animation:
 
-entradaTitulo 2s ease .8s backwards;
+entradaTitulo 1.5s ease .5s backwards;
 
 
 }
+
 
 
 
@@ -457,28 +596,29 @@ entradaTitulo 2s ease .8s backwards;
 @keyframes entradaTitulo{
 
 
-0%{
+from{
+
 
 opacity:0;
 
 transform:translateY(40px);
 
+
 }
 
 
+to{
 
-100%{
 
 opacity:1;
 
 transform:translateY(0);
 
-}
-
 
 }
 
 
+}
 
 
 
@@ -489,10 +629,11 @@ transform:translateY(0);
 
 animation:
 
-entradaSubtitulo 2s ease 1.5s backwards;
+entradaSubtitulo 1.5s ease 1s backwards;
 
 
 }
+
 
 
 
@@ -500,28 +641,31 @@ entradaSubtitulo 2s ease 1.5s backwards;
 @keyframes entradaSubtitulo{
 
 
-0%{
+from{
+
 
 opacity:0;
 
+
 letter-spacing:10px;
+
 
 }
 
 
+to{
 
-100%{
 
 opacity:1;
 
+
 letter-spacing:normal;
 
-}
-
 
 }
 
 
+}
 
 
 
@@ -532,154 +676,80 @@ letter-spacing:normal;
 
 margin-top:35px;
 
-font-size:24px;
-
-font-style:italic;
 
 color:#c9a227;
 
-letter-spacing:2px;
+
+font-size:24px;
+
+
+font-style:italic;
 
 
 animation:
 
-entradaFrase 2s ease 2s backwards;
+aparecer 2s ease 1.5s backwards;
 
 
 }
-
-
-
-
-
-@keyframes entradaFrase{
-
-
-0%{
-
-opacity:0;
-
-}
-
-
-
-100%{
-
-opacity:1;
-
-}
-
-
-}
-
-.banner{
-
-    width:100%;
-
-    max-height:450px;
-
-    object-fit:cover;
-
-}
-
-
-
-.logo_inicio{
-
-width:200px;
-
-display:block;
-
-margin:40px auto;
-
-
-filter:
-drop-shadow(0 0 15px #c9a227);
-
-
-animation:logoEntrada 2s;
-
-}
-
-
-
-@keyframes logoEntrada{
-
-
-from{
-
-opacity:0;
-
-transform:scale(0.7);
-
-}
-
-
-to{
-
-opacity:1;
-
-transform:scale(1);
-
-}
-
-
-}
-
-}
-
-
-
-.presentacion{
-
-    max-width:1000px;
-
-    margin:auto;
-
-    text-align:center;
-
-}
-
-
-
-
-
-/* ESTADO MAYOR */
+/* ==========================
+   ESTADO MAYOR
+========================== */
 
 
 .estado{
 
-    display:flex;
 
-    justify-content:center;
+display:flex;
 
-    gap:40px;
 
-    flex-wrap:wrap;
+justify-content:center;
+
+
+gap:40px;
+
+
+flex-wrap:wrap;
+
 
 }
+
+
 
 
 
 .persona{
 
-    width:350px;
 
-    background:#151515;
+width:350px;
 
-    border:2px solid #c9a227;
 
-    padding:20px;
+background:#141414;
 
-    text-align:center;
+
+border:2px solid #c9a227;
+
+
+padding:20px;
+
+
+text-align:center;
+
 
 }
+
+
 
 
 
 .persona img{
 
-    width:100%;
+
+width:100%;
+
+
+border-radius:5px;
+
 
 }
 
@@ -688,20 +758,32 @@ transform:scale(1);
 
 
 
-/* BLOQUES */
+
+
+/* ==========================
+   BLOQUES DE INFORMACION
+========================== */
 
 
 .bloque{
 
-    background:#111;
 
-    border-left:4px solid #556b2f;
+background:#111;
 
-    padding:25px;
 
-    margin:25px auto;
+border-left:
 
-    max-width:1100px;
+4px solid #556b2f;
+
+
+padding:25px;
+
+
+margin:25px auto;
+
+
+max-width:1100px;
+
 
 }
 
@@ -709,28 +791,63 @@ transform:scale(1);
 
 
 
-/* VALORES */
+.bloque h2{
+
+
+margin-bottom:15px;
+
+
+}
+
+
+
+
+
+
+
+/* ==========================
+   VALORES
+========================== */
 
 
 .valores{
 
+
 display:grid;
 
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+
+grid-template-columns:
+
+repeat(
+
+auto-fit,
+
+minmax(250px,1fr)
+
+);
+
 
 gap:20px;
 
+
 }
+
 
 
 
 .valor{
 
-background:#161616;
 
-border:1px solid #c9a227;
+background:#151515;
+
+
+border:
+
+1px solid #c9a227;
+
 
 padding:20px;
+
 
 }
 
@@ -738,97 +855,173 @@ padding:20px;
 
 
 
-/* MANUALES */
+.valor b{
+
+
+color:#c9a227;
+
+
+font-size:20px;
+
+
+}
+
+
+
+
+
+
+
+
+/* ==========================
+   MANUALES
+========================== */
 
 
 .manuales{
 
+
 display:grid;
 
-grid-template-columns:repeat(auto-fit,minmax(350px,1fr));
+
+grid-template-columns:
+
+repeat(
+
+auto-fit,
+
+minmax(350px,1fr)
+
+);
+
 
 gap:30px;
 
+
 }
+
+
 
 
 
 .manual{
 
+
 background:#151515;
 
-border:2px solid #c9a227;
+
+border:
+
+2px solid #c9a227;
+
 
 padding:20px;
 
+
 text-align:center;
 
+
 }
+
+
 
 
 
 .manual img{
 
+
 width:100%;
 
-height:400px;
+
+height:450px;
+
 
 object-fit:contain;
 
+
 }
+
+
 
 
 
 .manual button{
 
+
 margin-top:15px;
 
-padding:12px 25px;
+
+padding:12px 30px;
+
 
 background:#556b2f;
 
-color:white;
 
 border:none;
 
+
+color:white;
+
+
 cursor:pointer;
 
+
+font-weight:bold;
+
+
 }
+
+
+
 
 
 .manual button:hover{
 
+
 background:#718b3c;
+
 
 }
 
 
 
-/* BOTONES */
+
 
 .boton{
 
+
 display:inline-block;
 
-padding:18px 35px;
 
 background:#556b2f;
 
+
+padding:15px 30px;
+
+
 color:white;
+
 
 text-decoration:none;
 
-margin-top:25px;
 
 font-weight:bold;
 
+
+margin-top:20px;
+
+
 }
+
+
 
 
 
 .boton:hover{
 
+
 background:#718b3c;
+
 
 }
 
@@ -836,18 +1029,29 @@ background:#718b3c;
 
 
 
-/* RESPONSIVE */
+
+
+
+/* ==========================
+   RESPONSIVE
+========================== */
+
+
 
 @media(max-width:800px){
 
 
 .menu{
 
+
 position:relative;
+
 
 width:100%;
 
+
 height:auto;
+
 
 }
 
@@ -855,20 +1059,48 @@ height:auto;
 
 .contenido{
 
+
 margin-left:0;
 
+
 }
+
 
 
 
 .seccion{
 
-padding:30px 15px;
+
+padding:25px 15px;
+
+
+}
+
+
+
+
+.presentacion h1{
+
+
+font-size:30px;
+
+
+}
+
+
+
+.logo_inicio{
+
+
+width:160px;
+
 
 }
 
 
 }
+
+
 
 
 
@@ -879,68 +1111,101 @@ padding:30px 15px;
 
 
 
+
+
+
 <body>
 
 
 
 
 
-<!-- MENU LATERAL -->
+<!-- MENU -->
 
 
 <div class="menu">
 
 
+
 <img src="./assets/images/logo.png" class="logo">
 
 
+
 <h2>
+
 COE
+
 </h2>
 
 
 
+
 <button onclick="mostrar('inicio')">
+
 🏠 Inicio
+
 </button>
+
 
 
 <button onclick="mostrar('estado')">
+
 🏛️ Estado Mayor
+
 </button>
+
 
 
 <button onclick="mostrar('sobre')">
+
 ⚔️ Sobre el COE
+
 </button>
+
 
 
 <button onclick="mostrar('estructura')">
+
 🪖 Estructura
+
 </button>
+
 
 
 <button onclick="mostrar('manuales')">
+
 📜 Manuales
+
 </button>
+
 
 
 <button onclick="window.location.href='macros.html'">
+
 ⌨️ Macros
+
 </button>
+
 
 
 <button onclick="mostrar('ingreso')">
+
 📝 Ingreso
+
 </button>
+
 
 
 <button onclick="mostrar('galeria')">
+
 📸 Galería
+
 </button>
 
 
+
 </div>
+
 
 
 
@@ -964,45 +1229,60 @@ COE
 <div id="inicio" class="seccion activa">
 
 
-<img src="./assets/images/banner.png" class="banner">
+
+<div class="presentacion">
 
 
 <img src="./assets/images/logo.png" class="logo_inicio">
 
 
 
-<div class="presentacion">
-
-
 <h1>
+
 Comando de Operaciones Especiales
+
 </h1>
 
 
+
+
 <h2>
+
 Honor • Disciplina • Sacrificio
+
 </h2>
+
+
+
+
 
 <p class="frase">
 
-"Donde otros ven límites, el COE encuentra la misión."
+"Donde otros ven límites,
+el COE encuentra la misión."
 
 </p>
+
+
+
+
 
 <p>
 
-El Comando de Operaciones Especiales (COE) representa la unidad de
-élite del Ejército de Santa Cruz, preparada para responder ante
-misiones de alta exigencia mediante disciplina, liderazgo y precisión
-operativa.
+El Comando de Operaciones Especiales representa la unidad de élite
+del Ejército de Santa Cruz, preparada para responder ante misiones
+de alta exigencia mediante disciplina, liderazgo y precisión operativa.
 
 </p>
 
 
+
 </div>
 
 
 </div>
+
+
 
 
 
@@ -1018,7 +1298,9 @@ operativa.
 
 
 <h1>
+
 Estado Mayor COE
+
 </h1>
 
 
@@ -1026,35 +1308,62 @@ Estado Mayor COE
 <div class="estado">
 
 
+
 <div class="persona">
+
 
 <img src="./assets/images/ragnar.png">
 
+
 <h2>
+
 Comandante Supremo
+
 </h2>
 
+
+<p>
+
+Sr Ragnar
+
+</p>
+
+
 </div>
+
 
 
 
 
 <div class="persona">
 
+
 <img src="./assets/images/freya.png">
 
+
 <h2>
+
 Segundo Comando
+
 </h2>
 
-</div>
+
+<p>
+
+Freya Ragnar
+
+</p>
 
 
 </div>
 
 
+
+
 </div>
 
+
+</div>
 
 
 
@@ -1070,31 +1379,42 @@ Segundo Comando
 
 
 <h1>
+
 Sobre el COE
+
 </h1>
+
 
 
 
 <div class="bloque">
 
+
 <h2>
+
 📖 Historia
+
 </h2>
+
 
 
 <p>
 
 El Comando de Operaciones Especiales (COE) fue creado como la unidad
 de élite del Ejército de Santa Cruz, con el propósito de responder a
-misiones que requieren un alto nivel de preparación, coordinación y
-precisión operativa.
+aquellas misiones que requieren un alto nivel de preparación,
+coordinación y precisión operativa.
+
+Su nacimiento respondió a la necesidad de contar con soldados capaces
+de afrontar situaciones de alto riesgo, donde la disciplina,
+el liderazgo y el trabajo en equipo fueran determinantes.
 
 Desde su fundación, el COE mantiene un compromiso permanente con la
-excelencia, estableciendo rigurosos estándares de selección y
-entrenamiento para garantizar que sus integrantes estén preparados
-para escenarios complejos.
+excelencia, formando integrantes preparados para actuar con rapidez,
+profesionalismo y responsabilidad.
 
 </p>
+
 
 </div>
 
@@ -1105,16 +1425,20 @@ para escenarios complejos.
 
 <div class="bloque">
 
+
 <h2>
+
 🎯 Misión
+
 </h2>
+
 
 
 <p>
 
 Planificar, coordinar y ejecutar operaciones de alta complejidad que
-demanden preparación táctica, disciplina y profesionalismo,
-brindando apoyo al Ejército de Santa Cruz en situaciones de riesgo.
+demanden preparación táctica, disciplina y profesionalismo, brindando
+apoyo al Ejército de Santa Cruz en situaciones de riesgo.
 
 </p>
 
@@ -1129,16 +1453,20 @@ brindando apoyo al Ejército de Santa Cruz en situaciones de riesgo.
 
 <div class="bloque">
 
+
 <h2>
+
 👁️ Visión
+
 </h2>
+
 
 
 <p>
 
 Consolidarse como la unidad de operaciones especiales de referencia
-dentro del Ejército de Santa Cruz, reconocida por la excelencia de
-su entrenamiento y capacidad de respuesta.
+dentro del Ejército de Santa Cruz, reconocida por la excelencia de su
+entrenamiento y capacidad de respuesta.
 
 </p>
 
@@ -1152,71 +1480,116 @@ su entrenamiento y capacidad de respuesta.
 
 <div class="bloque">
 
+
 <h2>
+
 ⚖️ Valores
+
 </h2>
+
 
 
 <div class="valores">
 
 
+
 <div class="valor">
+
 <b>Honor</b>
+
 <br>
-Actuar con integridad y responsabilidad.
+
+Actuar con integridad y respeto.
+
 </div>
 
 
+
 <div class="valor">
+
 <b>Disciplina</b>
+
 <br>
-Cumplir órdenes y normas institucionales.
+
+Cumplir normas y órdenes institucionales.
+
 </div>
 
 
+
+
 <div class="valor">
+
 <b>Sacrificio</b>
+
 <br>
-Anteponer el deber y la misión.
+
+Compromiso absoluto con la misión.
+
 </div>
 
 
+
+
 <div class="valor">
+
 <b>Lealtad</b>
+
 <br>
-Fidelidad al COE y la institución.
+
+Fidelidad al COE y sus principios.
+
 </div>
 
 
+
+
 <div class="valor">
+
 <b>Profesionalismo</b>
+
 <br>
+
 Preparación y responsabilidad.
+
 </div>
 
 
+
+
 <div class="valor">
+
 <b>Trabajo en Equipo</b>
+
 <br>
+
 Cooperación entre integrantes.
+
 </div>
+
+
 
 
 <div class="valor">
+
 <b>Excelencia</b>
+
 <br>
-Mejora y superación constante.
+
+Superación constante.
+
+</div>
+
+
+
 </div>
 
 
 </div>
 
 
-</div>
-
 
 </div>
-
 
 
 
@@ -1232,18 +1605,14 @@ Mejora y superación constante.
 
 
 <h1>
-Estructura del COE
+
+Estructura COE
+
 </h1>
 
 
+
 <div class="bloque">
-
-
-<p>
-
-Organización y jerarquías internas del Comando de Operaciones Especiales.
-
-</p>
 
 
 <img src="./assets/images/rangos.png" width="100%">
@@ -1252,8 +1621,8 @@ Organización y jerarquías internas del Comando de Operaciones Especiales.
 </div>
 
 
-</div>
 
+</div>
 
 
 
@@ -1269,8 +1638,11 @@ Organización y jerarquías internas del Comando de Operaciones Especiales.
 
 
 <h1>
-Manuales y Documentación
+
+Manuales COE
+
 </h1>
+
 
 
 <div class="manuales">
@@ -1279,15 +1651,17 @@ Manuales y Documentación
 
 <div class="manual">
 
+
 <img src="./assets/images/rangos.png">
 
+
 <h2>
+
 Rangos
+
 </h2>
 
-<button onclick="abrirImagen('./assets/images/rangos.png')">
-VER MANUAL
-</button>
+
 
 </div>
 
@@ -1295,16 +1669,17 @@ VER MANUAL
 
 
 <div class="manual">
+
 
 <img src="./assets/images/secuestro.png">
 
+
 <h2>
+
 Secuestro
+
 </h2>
 
-<button onclick="abrirImagen('./assets/images/secuestro.png')">
-VER MANUAL
-</button>
 
 </div>
 
@@ -1312,16 +1687,17 @@ VER MANUAL
 
 
 <div class="manual">
+
 
 <img src="./assets/images/blindado.png">
 
+
 <h2>
+
 Blindados
+
 </h2>
 
-<button onclick="abrirImagen('./assets/images/blindado.png')">
-VER MANUAL
-</button>
 
 </div>
 
@@ -1330,39 +1706,41 @@ VER MANUAL
 
 <div class="manual">
 
+
 <img src="./assets/images/atentado.png">
 
+
 <h2>
+
 Atentado
+
 </h2>
 
-<button onclick="abrirImagen('./assets/images/atentado.png')">
-VER MANUAL
-</button>
 
 </div>
 
-
-</div>
 
 
 </div>
 
 
 
+</div>
 
 
 
 
 
-<!-- INGRESO -->
+<!-- INGRESO COE -->
 
 
 <div id="ingreso" class="seccion">
 
 
 <h1>
+
 Ingreso al COE
+
 </h1>
 
 
@@ -1373,63 +1751,86 @@ Ingreso al COE
 <p>
 
 El proceso de incorporación al Comando de Operaciones Especiales
-está destinado a quienes demuestren compromiso, disciplina y
-disposición para formar parte de una unidad de alto rendimiento.
+está destinado a aquellos aspirantes que demuestren compromiso,
+disciplina y disposición para formar parte de una unidad de alto
+rendimiento.
 
 </p>
 
 
 
-<a class="boton"
+<a 
+
+class="boton"
+
 href="https://forms.gle/cRVxM73TJ9fyLWxh9"
+
 target="_blank">
 
+
 SOLICITAR INGRESO AL COE
+
 
 </a>
 
 
-</div>
-
 
 </div>
 
 
 
+</div>
 
 
 
 
 
-<!-- GALERIA -->
+
+
+
+
+<!-- GALERÍA -->
 
 
 <div id="galeria" class="seccion">
 
 
 <h1>
-Galería
+
+Galería COE
+
 </h1>
+
 
 
 <div class="bloque">
 
+
 <p>
+
 Próximamente se agregarán imágenes de entrenamientos,
-operaciones y actividades del COE.
+operaciones y actividades oficiales del Comando de Operaciones
+Especiales.
+
 </p>
 
 
-</div>
-
 
 </div>
 
 
 
+</div>
+
+
+
+
+
+
 
 
 </div>
+
 
 
 
@@ -1444,32 +1845,26 @@ operaciones y actividades del COE.
 function mostrar(id){
 
 
-let secciones=document.querySelectorAll(".seccion");
+let secciones = document.querySelectorAll(".seccion");
+
 
 
 secciones.forEach(function(seccion){
 
+
 seccion.classList.remove("activa");
 
+
 });
+
 
 
 document.getElementById(id).classList.add("activa");
 
 
-}
-
-
-
-
-
-function abrirImagen(imagen){
-
-
-window.open(imagen,"_blank");
-
 
 }
+
 
 
 </script>
@@ -1478,6 +1873,9 @@ window.open(imagen,"_blank");
 
 
 
+
+
 </body>
+
 
 </html>
