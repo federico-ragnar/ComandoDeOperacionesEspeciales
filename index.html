@@ -8,50 +8,57 @@
 
 <title>COE | Comando de Operaciones Especiales</title>
 
+
 <style>
 
-body {
-    margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
-    background: #111;
-    color: white;
+*{
+    box-sizing:border-box;
 }
 
 
-/* ENCABEZADO */
+body{
 
-header {
-    background: #1b2a1b;
-    text-align: center;
-    padding: 30px;
-}
+    margin:0;
+    font-family:Arial, Helvetica, sans-serif;
+    background:#0d0d0d;
+    color:white;
 
-
-.logo {
-    width: 160px;
-}
-
-
-h1 {
-    color: #d4af37;
-    font-size: 38px;
-    margin-bottom: 10px;
-}
-
-
-h2 {
-    color: #d4af37;
 }
 
 
 
-/* BANNER */
+/* MENU */
 
-.banner {
+nav{
 
-    width: 100%;
-    height: 350px;
-    object-fit: cover;
+    position:fixed;
+    top:0;
+    width:100%;
+    background:#111;
+    border-bottom:2px solid #c9a227;
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    z-index:1000;
+
+}
+
+
+nav button{
+
+    background:none;
+    border:none;
+    color:white;
+    padding:18px 20px;
+    cursor:pointer;
+    font-weight:bold;
+
+}
+
+
+nav button:hover{
+
+    background:#556b2f;
 
 }
 
@@ -59,95 +66,159 @@ h2 {
 
 /* SECCIONES */
 
-section {
 
-    max-width: 1000px;
-    margin: auto;
-    padding: 40px 20px;
+.seccion{
+
+    display:none;
+    min-height:100vh;
+    padding:100px 40px 40px;
+    animation:entrada 0.5s;
+
+}
+
+
+.activa{
+
+    display:block;
+
+}
+
+
+@keyframes entrada{
+
+from{
+
+opacity:0;
+
+}
+
+to{
+
+opacity:1;
+
+}
 
 }
 
 
 
-p {
+/* TITULOS */
 
-    font-size: 18px;
-    line-height: 1.6;
+
+h1,h2{
+
+    color:#c9a227;
+    text-align:center;
 
 }
+
+
+
+/* INICIO */
+
+
+.banner{
+
+    width:100%;
+    max-height:400px;
+    object-fit:cover;
+
+}
+
+
+.logo{
+
+    display:block;
+    margin:20px auto;
+    width:180px;
+
+}
+
+
+
+.contenido{
+
+    max-width:1000px;
+    margin:auto;
+    text-align:center;
+
+}
+
 
 
 
 /* ESTADO MAYOR */
 
-.cards {
 
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    flex-wrap: wrap;
+.tarjetas{
 
-}
-
-
-.card {
-
-    background: #222;
-    border: 2px solid #d4af37;
-    width: 280px;
-    padding: 20px;
-    text-align: center;
+    display:flex;
+    justify-content:center;
+    gap:40px;
+    flex-wrap:wrap;
 
 }
 
 
-.card img {
+.tarjeta{
 
-    width: 100%;
-    height: auto;
+    background:#1b1b1b;
+    border:2px solid #c9a227;
+    padding:20px;
+    width:300px;
+    text-align:center;
 
 }
 
 
+.tarjeta img{
 
-/* REGLAMENTO */
-
-.documento {
-
-    width: 100%;
-    border: 2px solid #d4af37;
+    width:100%;
 
 }
 
 
 
-/* PIE */
+/* DOCUMENTOS */
 
-footer {
 
-    background: black;
-    text-align: center;
-    padding: 20px;
+.documento{
+
+    display:block;
+    margin:auto;
+    max-width:900px;
+    width:100%;
+
+}
+
+
+
+/* BOTON */
+
+
+.boton{
+
+    display:inline-block;
+    background:#556b2f;
+    padding:15px 30px;
+    color:white;
+    text-decoration:none;
+    border-radius:5px;
 
 }
 
 
 
-/* ADAPTACIÓN CELULAR */
 
-@media(max-width:700px){
+footer{
 
-h1{
-    font-size:28px;
-}
-
-.banner{
-
-    height:200px;
+    text-align:center;
+    padding:20px;
+    background:#000;
 
 }
 
-}
+
 
 </style>
 
@@ -155,15 +226,44 @@ h1{
 </head>
 
 
-
 <body>
 
 
 
-<header>
+<nav>
+
+<button onclick="mostrar('inicio')">Inicio</button>
+
+<button onclick="mostrar('estado')">Estado Mayor</button>
+
+<button onclick="mostrar('coe')">Sobre el COE</button>
+
+<button onclick="mostrar('manuales')">Manuales</button>
+
+<button onclick="mostrar('ingreso')">Ingreso</button>
+
+<button onclick="mostrar('galeria')">Galería</button>
+
+
+</nav>
+
+
+
+
+
+<!-- INICIO -->
+
+
+<div id="inicio" class="seccion activa">
+
 
 <img src="./assets/images/logo.png" class="logo">
 
+
+<img src="./assets/images/banner.png" class="banner">
+
+
+<div class="contenido">
 
 <h1>
 Comando de Operaciones Especiales
@@ -175,108 +275,150 @@ Honor • Disciplina • Sacrificio
 </h2>
 
 
-</header>
-
-
-
-
-<img src="./assets/images/banner.png" class="banner">
-
-
-
-
-
-<section>
-
-
-<h2>
-Sobre el COE
-</h2>
-
 
 <p>
 
-El Comando de Operaciones Especiales es una unidad especializada
-del Ejército destinada a cumplir misiones de alta exigencia,
-manteniendo los principios de honor, disciplina, compromiso y
-profesionalismo.
+El COE representa una unidad especializada del Ejército,
+formada por personal comprometido con la disciplina,
+la preparación y el cumplimiento de misiones de alta exigencia.
 
 </p>
 
 
-</section>
+</div>
+
+
+</div>
 
 
 
 
 
-<section>
+
+<!-- ESTADO MAYOR -->
 
 
-<h2>
-Estado Mayor
-</h2>
+<div id="estado" class="seccion">
 
 
+<h1>
+Estado Mayor COE
+</h1>
 
-<div class="cards">
+
+<div class="tarjetas">
 
 
-
-<div class="card">
+<div class="tarjeta">
 
 <img src="./assets/images/ragnar.png">
-
 
 <h3>
 Comandante Supremo
 </h3>
 
-
 </div>
 
 
 
-
-
-<div class="card">
+<div class="tarjeta">
 
 <img src="./assets/images/freya.png">
-
 
 <h3>
 Segundo Comando
 </h3>
 
+</div>
+
+
+</div>
+
 
 </div>
 
 
 
 
-</div>
 
 
-</section>
+<!-- SOBRE COE -->
 
 
+<div id="coe" class="seccion">
 
 
+<h1>
+Sobre el COE
+</h1>
 
 
-
-<section>
+<div class="contenido">
 
 
 <h2>
-Reglamento COE
+Historia
 </h2>
+
+<p>
+Información histórica del Comando de Operaciones Especiales.
+</p>
+
+
+<h2>
+Misión
+</h2>
+
+<p>
+Ejecutar operaciones especiales manteniendo los más altos estándares de disciplina y preparación.
+</p>
+
+
+<h2>
+Visión
+</h2>
+
+<p>
+Ser una unidad referente dentro del Ejército.
+</p>
+
+
+
+<h2>
+Valores
+</h2>
+
+<p>
+Honor | Disciplina | Lealtad | Compromiso | Trabajo en equipo
+</p>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+<!-- MANUALES -->
+
+
+<div id="manuales" class="seccion">
+
+
+<h1>
+Reglamentos y Manuales
+</h1>
 
 
 <img src="./assets/images/reglamento.png" class="documento">
 
 
-</section>
+</div>
 
 
 
@@ -284,45 +426,66 @@ Reglamento COE
 
 
 
-<section>
+<!-- INGRESO -->
 
 
-<h2>
+<div id="ingreso" class="seccion">
+
+
+<h1>
 Ingreso al COE
-</h2>
+</h1>
+
+
+<div class="contenido">
 
 
 <p>
-
-Formulario de incorporación próximamente disponible.
-
+Próximamente se publicarán los requisitos oficiales de ingreso.
 </p>
 
 
-</section>
+<a class="boton" href="#">
+
+Formulario de ingreso
+
+</a>
+
+
+</div>
+
+
+</div>
 
 
 
 
 
 
-<section>
+
+<!-- GALERIA -->
 
 
-<h2>
+<div id="galeria" class="seccion">
+
+
+<h1>
 Galería
-</h2>
+</h1>
+
+
+<div class="contenido">
 
 
 <p>
-
 Próximamente contenido multimedia del COE.
-
 </p>
 
 
-</section>
+</div>
 
+
+</div>
 
 
 
@@ -331,18 +494,41 @@ Próximamente contenido multimedia del COE.
 
 <footer>
 
-<p>
-
 © COE - Comando de Operaciones Especiales
-
-</p>
-
 
 </footer>
 
 
 
-</body>
 
+
+
+<script>
+
+
+function mostrar(id){
+
+
+let secciones=document.querySelectorAll('.seccion');
+
+
+secciones.forEach(function(seccion){
+
+seccion.classList.remove('activa');
+
+});
+
+
+document.getElementById(id).classList.add('activa');
+
+
+}
+
+
+</script>
+
+
+
+</body>
 
 </html>
