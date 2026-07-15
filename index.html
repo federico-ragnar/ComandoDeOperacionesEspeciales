@@ -272,6 +272,306 @@ z-index:1;
 /* INICIO */
 
 
+    /* ==========================
+   PORTADA COE ANIMADA
+========================== */
+
+
+#inicio{
+
+position:relative;
+min-height:100vh;
+overflow:hidden;
+
+display:flex;
+align-items:center;
+
+}
+
+
+/* HUMO TÁCTICO */
+
+#inicio::before{
+
+content:"";
+
+position:absolute;
+
+width:180%;
+height:180%;
+
+top:-40%;
+left:-40%;
+
+
+background:
+
+radial-gradient(
+circle at 30% 40%,
+rgba(120,120,120,0.18),
+transparent 25%
+),
+
+radial-gradient(
+circle at 70% 60%,
+rgba(85,107,47,0.20),
+transparent 30%
+),
+
+radial-gradient(
+circle at 50% 50%,
+rgba(201,162,39,0.08),
+transparent 20%
+);
+
+
+filter:blur(35px);
+
+
+animation:humoCOE 25s infinite alternate;
+
+
+z-index:0;
+
+}
+
+
+
+@keyframes humoCOE{
+
+
+0%{
+
+transform:translate(0,0) scale(1);
+
+opacity:.6;
+
+}
+
+
+50%{
+
+transform:translate(5%,3%) scale(1.1);
+
+opacity:.8;
+
+}
+
+
+100%{
+
+transform:translate(-5%,5%) scale(1);
+
+opacity:.6;
+
+}
+
+
+}
+
+
+
+
+
+#inicio > *{
+
+position:relative;
+
+z-index:2;
+
+}
+
+
+
+
+
+/* LOGO */
+
+.logo_inicio{
+
+width:220px;
+
+display:block;
+
+margin:40px auto;
+
+
+filter:
+drop-shadow(0 0 20px #c9a227);
+
+
+animation:
+
+entradaLogo 2s ease;
+
+
+}
+
+
+
+
+@keyframes entradaLogo{
+
+
+0%{
+
+opacity:0;
+
+transform:scale(.5);
+
+}
+
+
+
+100%{
+
+opacity:1;
+
+transform:scale(1);
+
+}
+
+
+}
+
+
+
+
+
+/* TITULO */
+
+
+.presentacion h1{
+
+
+animation:
+
+entradaTitulo 2s ease .8s backwards;
+
+
+}
+
+
+
+
+@keyframes entradaTitulo{
+
+
+0%{
+
+opacity:0;
+
+transform:translateY(40px);
+
+}
+
+
+
+100%{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+
+}
+
+
+
+
+
+
+
+.presentacion h2{
+
+
+animation:
+
+entradaSubtitulo 2s ease 1.5s backwards;
+
+
+}
+
+
+
+
+@keyframes entradaSubtitulo{
+
+
+0%{
+
+opacity:0;
+
+letter-spacing:10px;
+
+}
+
+
+
+100%{
+
+opacity:1;
+
+letter-spacing:normal;
+
+}
+
+
+}
+
+
+
+
+
+
+
+.frase{
+
+
+margin-top:35px;
+
+font-size:24px;
+
+font-style:italic;
+
+color:#c9a227;
+
+letter-spacing:2px;
+
+
+animation:
+
+entradaFrase 2s ease 2s backwards;
+
+
+}
+
+
+
+
+
+@keyframes entradaFrase{
+
+
+0%{
+
+opacity:0;
+
+}
+
+
+
+100%{
+
+opacity:1;
+
+}
+
+
+}
+
 .banner{
 
     width:100%;
