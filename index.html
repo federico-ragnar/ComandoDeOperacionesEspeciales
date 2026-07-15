@@ -52,9 +52,11 @@ overflow-x:hidden;
 
 
 
-/* ==========================
+
+
+/* =========================
    MENU LATERAL
-========================== */
+========================= */
 
 
 .menu{
@@ -93,12 +95,10 @@ border-right:
 padding-top:25px;
 
 
-z-index:10;
+z-index:20;
 
 
 }
-
-
 
 
 
@@ -125,11 +125,10 @@ text-align:center;
 
 color:#c9a227;
 
-margin:20px 0;
+margin:20px;
 
 
 }
-
 
 
 
@@ -148,9 +147,7 @@ padding:15px;
 background:#111;
 
 
-border:
-
-1px solid #444;
+border:1px solid #444;
 
 
 color:white;
@@ -159,17 +156,16 @@ color:white;
 cursor:pointer;
 
 
-text-align:left;
-
-
 font-weight:bold;
+
+
+text-align:left;
 
 
 transition:.3s;
 
 
 }
-
 
 
 
@@ -190,9 +186,11 @@ border-color:#c9a227;
 
 
 
-/* ==========================
+
+
+/* =========================
    CONTENIDO
-========================== */
+========================= */
 
 
 .contenido{
@@ -200,11 +198,11 @@ border-color:#c9a227;
 
 margin-left:260px;
 
+
 min-height:100vh;
 
 
 }
-
 
 
 
@@ -215,7 +213,7 @@ min-height:100vh;
 display:none;
 
 
-padding:50px;
+padding:40px;
 
 
 min-height:100vh;
@@ -223,11 +221,10 @@ min-height:100vh;
 
 animation:
 
-aparecer .5s ease;
+entradaSeccion .5s ease;
 
 
 }
-
 
 
 
@@ -242,15 +239,14 @@ display:block;
 
 
 
-
-@keyframes aparecer{
+@keyframes entradaSeccion{
 
 
 from{
 
 opacity:0;
 
-transform:translateY(15px);
+transform:translateY(20px);
 
 }
 
@@ -271,24 +267,19 @@ transform:translateY(0);
 
 
 
-
 h1{
 
 
 text-align:center;
 
-
-font-size:38px;
-
-
 color:#c9a227;
 
+font-size:38px;
 
 margin-bottom:30px;
 
 
 }
-
 
 
 
@@ -300,8 +291,6 @@ color:#c9a227;
 
 
 }
-
-
 
 
 
@@ -321,29 +310,21 @@ line-height:1.8;
 
 
 
-
-
-/* ==========================
-   PORTADA COE
-========================== */
+/* =========================
+   PORTADA
+========================= */
 
 
 #inicio{
 
 
-position:relative;
-
-
-display:flex;
-
-
-justify-content:center;
-
-
-align-items:center;
+padding:0;
 
 
 text-align:center;
+
+
+position:relative;
 
 
 overflow:hidden;
@@ -355,10 +336,98 @@ overflow:hidden;
 
 
 
-/* HUMO */
+/* BANNER SUPERIOR */
 
 
-#inicio::before{
+.banner{
+
+
+width:100%;
+
+
+height:430px;
+
+
+object-fit:cover;
+
+
+display:block;
+
+
+filter:
+
+brightness(.65);
+
+
+border-bottom:
+
+2px solid #c9a227;
+
+
+animation:
+
+aparecerBanner 1.5s ease;
+
+
+}
+
+
+
+@keyframes aparecerBanner{
+
+
+from{
+
+opacity:0;
+
+transform:scale(1.05);
+
+}
+
+
+
+to{
+
+opacity:1;
+
+transform:scale(1);
+
+}
+
+
+}
+
+
+
+
+
+
+
+
+
+/* ZONA INFERIOR CON HUMO */
+
+
+.portadaInferior{
+
+
+position:relative;
+
+
+padding:60px 30px 100px;
+
+
+overflow:hidden;
+
+
+}
+
+
+
+
+
+
+.portadaInferior::before{
 
 
 content:"";
@@ -384,11 +453,12 @@ radial-gradient(
 
 circle at 30% 40%,
 
-rgba(150,150,150,.15),
+rgba(150,150,150,.18),
 
 transparent 30%
 
 ),
+
 
 
 radial-gradient(
@@ -400,6 +470,7 @@ rgba(85,107,47,.20),
 transparent 35%
 
 ),
+
 
 
 radial-gradient(
@@ -420,8 +491,7 @@ filter:blur(45px);
 
 animation:
 
-movimientoHumo 25s infinite alternate;
-
+humoMovimiento 25s infinite alternate;
 
 
 z-index:0;
@@ -432,35 +502,32 @@ z-index:0;
 
 
 
-@keyframes movimientoHumo{
+@keyframes humoMovimiento{
 
 
 0%{
 
-
-transform:translate(0,0) scale(1);
-
+transform:translate(0,0);
 
 }
 
 
 100%{
 
+transform:translate(-5%,5%);
 
-transform:translate(-5%,5%) scale(1.1);
+}
 
 
 }
 
 
 
-}
 
 
 
 
-
-#inicio > *{
+.portadaInferior > *{
 
 
 position:relative;
@@ -475,29 +542,10 @@ z-index:1;
 
 
 
-.banner{
-
-
-width:100%;
-
-
-max-height:400px;
-
-
-object-fit:cover;
-
-
-border-bottom:
-
-2px solid #c9a227;
-
-
-}
 
 
 
-
-
+/* LOGO ANIMADO */
 
 
 .logo_inicio{
@@ -506,10 +554,11 @@ border-bottom:
 width:220px;
 
 
-margin:35px auto;
+margin:0 auto 35px;
 
 
 display:block;
+
 
 
 filter:
@@ -541,10 +590,11 @@ entradaLogo 2s ease;
 
 opacity:0;
 
-transform:scale(.5);
+transform:scale(.4);
 
 
 }
+
 
 
 100%{
@@ -564,19 +614,10 @@ transform:scale(1);
 
 
 
-.presentacion{
-
-
-max-width:1000px;
-
-
-margin:auto;
-
-
-}
 
 
 
+/* TITULO */
 
 
 .presentacion h1{
@@ -584,7 +625,7 @@ margin:auto;
 
 animation:
 
-entradaTitulo 1.5s ease .5s backwards;
+entradaTitulo 1.5s ease .8s backwards;
 
 
 }
@@ -624,12 +665,15 @@ transform:translateY(0);
 
 
 
+
+
+
 .presentacion h2{
 
 
 animation:
 
-entradaSubtitulo 1.5s ease 1s backwards;
+entradaLema 1.5s ease 1.4s backwards;
 
 
 }
@@ -637,8 +681,7 @@ entradaSubtitulo 1.5s ease 1s backwards;
 
 
 
-
-@keyframes entradaSubtitulo{
+@keyframes entradaLema{
 
 
 from{
@@ -646,18 +689,17 @@ from{
 
 opacity:0;
 
-
-letter-spacing:10px;
+letter-spacing:15px;
 
 
 }
+
 
 
 to{
 
 
 opacity:1;
-
 
 letter-spacing:normal;
 
@@ -671,13 +713,13 @@ letter-spacing:normal;
 
 
 
+
+
+
 .frase{
 
 
 margin-top:35px;
-
-
-color:#c9a227;
 
 
 font-size:24px;
@@ -686,15 +728,47 @@ font-size:24px;
 font-style:italic;
 
 
+color:#c9a227;
+
+
+
 animation:
 
-aparecer 2s ease 1.5s backwards;
+aparecerFrase 2s ease 2s backwards;
 
 
 }
-/* ==========================
+
+
+
+
+
+@keyframes aparecerFrase{
+
+
+from{
+
+
+opacity:0;
+
+
+}
+
+
+to{
+
+
+opacity:1;
+
+
+}
+
+
+}
+
+/* =========================
    ESTADO MAYOR
-========================== */
+========================= */
 
 
 .estado{
@@ -717,7 +791,6 @@ flex-wrap:wrap;
 
 
 
-
 .persona{
 
 
@@ -727,7 +800,9 @@ width:350px;
 background:#141414;
 
 
-border:2px solid #c9a227;
+border:
+
+2px solid #c9a227;
 
 
 padding:20px;
@@ -737,7 +812,6 @@ text-align:center;
 
 
 }
-
 
 
 
@@ -757,12 +831,9 @@ border-radius:5px;
 
 
 
-
-
-
-/* ==========================
-   BLOQUES DE INFORMACION
-========================== */
+/* =========================
+   BLOQUES
+========================= */
 
 
 .bloque{
@@ -779,22 +850,10 @@ border-left:
 padding:25px;
 
 
-margin:25px auto;
-
-
 max-width:1100px;
 
 
-}
-
-
-
-
-
-.bloque h2{
-
-
-margin-bottom:15px;
+margin:25px auto;
 
 
 }
@@ -803,11 +862,9 @@ margin-bottom:15px;
 
 
 
-
-
-/* ==========================
+/* =========================
    VALORES
-========================== */
+========================= */
 
 
 .valores{
@@ -872,10 +929,9 @@ font-size:20px;
 
 
 
-
-/* ==========================
+/* =========================
    MANUALES
-========================== */
+========================= */
 
 
 .manuales{
@@ -899,7 +955,6 @@ gap:30px;
 
 
 }
-
 
 
 
@@ -945,43 +1000,15 @@ object-fit:contain;
 
 
 
-.manual button{
+.manual h2{
 
 
 margin-top:15px;
 
 
-padding:12px 30px;
-
-
-background:#556b2f;
-
-
-border:none;
-
-
-color:white;
-
-
-cursor:pointer;
-
-
-font-weight:bold;
-
-
 }
 
 
-
-
-
-.manual button:hover{
-
-
-background:#718b3c;
-
-
-}
 
 
 
@@ -993,10 +1020,10 @@ background:#718b3c;
 display:inline-block;
 
 
+padding:15px 35px;
+
+
 background:#556b2f;
-
-
-padding:15px 30px;
 
 
 color:white;
@@ -1008,12 +1035,10 @@ text-decoration:none;
 font-weight:bold;
 
 
-margin-top:20px;
+margin-top:25px;
 
 
 }
-
-
 
 
 
@@ -1031,14 +1056,13 @@ background:#718b3c;
 
 
 
-
-/* ==========================
+/* =========================
    RESPONSIVE
-========================== */
-
+========================= */
 
 
 @media(max-width:800px){
+
 
 
 .menu{
@@ -1067,7 +1091,6 @@ margin-left:0;
 
 
 
-
 .seccion{
 
 
@@ -1079,10 +1102,10 @@ padding:25px 15px;
 
 
 
-.presentacion h1{
+.banner{
 
 
-font-size:30px;
+height:250px;
 
 
 }
@@ -1098,17 +1121,26 @@ width:160px;
 }
 
 
+
+.presentacion h1{
+
+
+font-size:30px;
+
+
 }
 
 
+
+}
 
 
 
 </style>
 
 
-</head>
 
+</head>
 
 
 
@@ -1120,7 +1152,7 @@ width:160px;
 
 
 
-<!-- MENU -->
+<!-- MENU LATERAL -->
 
 
 <div class="menu">
@@ -1140,11 +1172,14 @@ COE
 
 
 
+
 <button onclick="mostrar('inicio')">
 
 🏠 Inicio
 
 </button>
+
+
 
 
 
@@ -1156,11 +1191,15 @@ COE
 
 
 
+
+
 <button onclick="mostrar('sobre')">
 
 ⚔️ Sobre el COE
 
 </button>
+
+
 
 
 
@@ -1172,11 +1211,15 @@ COE
 
 
 
+
+
 <button onclick="mostrar('manuales')">
 
 📜 Manuales
 
 </button>
+
+
 
 
 
@@ -1188,11 +1231,15 @@ COE
 
 
 
+
+
 <button onclick="mostrar('ingreso')">
 
 📝 Ingreso
 
 </button>
+
+
 
 
 
@@ -1213,10 +1260,13 @@ COE
 
 
 
+
 <!-- CONTENIDO -->
 
 
 <div class="contenido">
+
+
 
 
 
@@ -1230,10 +1280,24 @@ COE
 
 
 
-<div class="presentacion">
+<img src="./assets/images/banner.png" class="banner">
+
+
+
+
+
+<div class="portadaInferior">
+
 
 
 <img src="./assets/images/logo.png" class="logo_inicio">
+
+
+
+
+
+
+<div class="presentacion">
 
 
 
@@ -1242,6 +1306,7 @@ COE
 Comando de Operaciones Especiales
 
 </h1>
+
 
 
 
@@ -1258,8 +1323,10 @@ Honor • Disciplina • Sacrificio
 
 <p class="frase">
 
+
 "Donde otros ven límites,
 el COE encuentra la misión."
+
 
 </p>
 
@@ -1269,19 +1336,26 @@ el COE encuentra la misión."
 
 <p>
 
+
 El Comando de Operaciones Especiales representa la unidad de élite
 del Ejército de Santa Cruz, preparada para responder ante misiones
 de alta exigencia mediante disciplina, liderazgo y precisión operativa.
+
 
 </p>
 
 
 
-</div>
-
 
 </div>
 
+
+
+</div>
+
+
+
+</div>
 
 
 
@@ -1297,6 +1371,7 @@ de alta exigencia mediante disciplina, liderazgo y precisión operativa.
 <div id="estado" class="seccion">
 
 
+
 <h1>
 
 Estado Mayor COE
@@ -1305,14 +1380,20 @@ Estado Mayor COE
 
 
 
+
+
 <div class="estado">
+
+
 
 
 
 <div class="persona">
 
 
+
 <img src="./assets/images/ragnar.png">
+
 
 
 <h2>
@@ -1322,11 +1403,13 @@ Comandante Supremo
 </h2>
 
 
+
 <p>
 
 Sr Ragnar
 
 </p>
+
 
 
 </div>
@@ -1335,10 +1418,14 @@ Sr Ragnar
 
 
 
+
+
 <div class="persona">
 
 
+
 <img src="./assets/images/freya.png">
+
 
 
 <h2>
@@ -1348,6 +1435,7 @@ Segundo Comando
 </h2>
 
 
+
 <p>
 
 Freya Ragnar
@@ -1355,15 +1443,19 @@ Freya Ragnar
 </p>
 
 
-</div>
-
-
-
 
 </div>
 
 
+
+
+
 </div>
+
+
+
+</div>
+
 
 
 
@@ -1387,6 +1479,9 @@ Sobre el COE
 
 
 
+
+
+
 <div class="bloque">
 
 
@@ -1400,23 +1495,28 @@ Sobre el COE
 
 <p>
 
+
 El Comando de Operaciones Especiales (COE) fue creado como la unidad
 de élite del Ejército de Santa Cruz, con el propósito de responder a
 aquellas misiones que requieren un alto nivel de preparación,
 coordinación y precisión operativa.
 
 Su nacimiento respondió a la necesidad de contar con soldados capaces
-de afrontar situaciones de alto riesgo, donde la disciplina,
-el liderazgo y el trabajo en equipo fueran determinantes.
+de afrontar situaciones de alto riesgo, donde la disciplina, el
+liderazgo y el trabajo en equipo fueran determinantes para el éxito.
 
 Desde su fundación, el COE mantiene un compromiso permanente con la
-excelencia, formando integrantes preparados para actuar con rapidez,
-profesionalismo y responsabilidad.
+excelencia, estableciendo rigurosos estándares de preparación y
+entrenamiento.
+
+
 
 </p>
 
 
+
 </div>
+
 
 
 
@@ -1436,11 +1536,14 @@ profesionalismo y responsabilidad.
 
 <p>
 
+
 Planificar, coordinar y ejecutar operaciones de alta complejidad que
 demanden preparación táctica, disciplina y profesionalismo, brindando
 apoyo al Ejército de Santa Cruz en situaciones de riesgo.
 
+
 </p>
+
 
 
 </div>
@@ -1464,14 +1567,19 @@ apoyo al Ejército de Santa Cruz en situaciones de riesgo.
 
 <p>
 
+
 Consolidarse como la unidad de operaciones especiales de referencia
 dentro del Ejército de Santa Cruz, reconocida por la excelencia de su
 entrenamiento y capacidad de respuesta.
 
+
+
 </p>
 
 
+
 </div>
+
 
 
 
@@ -1489,25 +1597,40 @@ entrenamiento y capacidad de respuesta.
 
 
 
+
+
 <div class="valores">
+
+
 
 
 
 <div class="valor">
 
-<b>Honor</b>
+<b>
+
+Honor
+
+</b>
 
 <br>
 
-Actuar con integridad y respeto.
+Actuar con integridad y responsabilidad.
 
 </div>
 
 
 
+
+
+
 <div class="valor">
 
-<b>Disciplina</b>
+<b>
+
+Disciplina
+
+</b>
 
 <br>
 
@@ -1518,9 +1641,16 @@ Cumplir normas y órdenes institucionales.
 
 
 
+
+
+
 <div class="valor">
 
-<b>Sacrificio</b>
+<b>
+
+Sacrificio
+
+</b>
 
 <br>
 
@@ -1531,52 +1661,88 @@ Compromiso absoluto con la misión.
 
 
 
-<div class="valor">
-
-<b>Lealtad</b>
-
-<br>
-
-Fidelidad al COE y sus principios.
-
-</div>
-
 
 
 
 <div class="valor">
 
-<b>Profesionalismo</b>
+<b>
+
+Lealtad
+
+</b>
 
 <br>
 
-Preparación y responsabilidad.
+Fidelidad al COE.
 
 </div>
+
+
+
 
 
 
 
 <div class="valor">
 
-<b>Trabajo en Equipo</b>
+<b>
+
+Profesionalismo
+
+</b>
 
 <br>
 
-Cooperación entre integrantes.
+Preparación constante.
 
 </div>
+
+
+
 
 
 
 
 <div class="valor">
 
-<b>Excelencia</b>
+<b>
+
+Trabajo en Equipo
+
+</b>
 
 <br>
 
-Superación constante.
+Coordinación entre integrantes.
+
+</div>
+
+
+
+
+
+
+
+<div class="valor">
+
+<b>
+
+Excelencia
+
+</b>
+
+<br>
+
+Superación continua.
+
+</div>
+
+
+
+
+
+
 
 </div>
 
@@ -1585,13 +1751,8 @@ Superación constante.
 </div>
 
 
-</div>
-
-
 
 </div>
-
-
 
 
 
@@ -1618,12 +1779,12 @@ Estructura COE
 <img src="./assets/images/rangos.png" width="100%">
 
 
-</div>
-
-
 
 </div>
 
+
+
+</div>
 
 
 
@@ -1645,7 +1806,11 @@ Manuales COE
 
 
 
+
+
 <div class="manuales">
+
+
 
 
 
@@ -1662,8 +1827,10 @@ Rangos
 </h2>
 
 
-
 </div>
+
+
+
 
 
 
@@ -1686,6 +1853,9 @@ Secuestro
 
 
 
+
+
+
 <div class="manual">
 
 
@@ -1700,6 +1870,9 @@ Blindados
 
 
 </div>
+
+
+
 
 
 
@@ -1721,7 +1894,6 @@ Atentado
 
 
 
-</div>
 
 
 
@@ -1729,9 +1901,12 @@ Atentado
 
 
 
+</div>
 
 
-<!-- INGRESO COE -->
+
+
+<!-- INGRESO AL COE -->
 
 
 <div id="ingreso" class="seccion">
@@ -1739,23 +1914,30 @@ Atentado
 
 <h1>
 
-Ingreso al COE
+Ingreso al COMANDO DE OPERACIONES ESPECIALES
 
 </h1>
+
+
 
 
 
 <div class="bloque">
 
 
+
 <p>
 
+
 El proceso de incorporación al Comando de Operaciones Especiales
-está destinado a aquellos aspirantes que demuestren compromiso,
-disciplina y disposición para formar parte de una unidad de alto
+está destinado a aspirantes que demuestren compromiso, disciplina,
+responsabilidad y disposición para formar parte de una unidad de alto
 rendimiento.
 
+
 </p>
+
+
 
 
 
@@ -1768,19 +1950,20 @@ href="https://forms.gle/cRVxM73TJ9fyLWxh9"
 target="_blank">
 
 
-SOLICITAR INGRESO AL COE
+SOLICITAR INGRESO AL COMANDO DE OPERACIONES ESPECIALES
 
 
 </a>
 
 
 
+
+
 </div>
 
 
 
 </div>
-
 
 
 
@@ -1795,6 +1978,7 @@ SOLICITAR INGRESO AL COE
 <div id="galeria" class="seccion">
 
 
+
 <h1>
 
 Galería COE
@@ -1803,14 +1987,19 @@ Galería COE
 
 
 
+
+
 <div class="bloque">
+
 
 
 <p>
 
+
 Próximamente se agregarán imágenes de entrenamientos,
-operaciones y actividades oficiales del Comando de Operaciones
-Especiales.
+operaciones, ceremonias y actividades oficiales del Comando
+de Operaciones Especiales.
+
 
 </p>
 
@@ -1820,8 +2009,8 @@ Especiales.
 
 
 
-</div>
 
+</div>
 
 
 
@@ -1845,17 +2034,22 @@ Especiales.
 function mostrar(id){
 
 
+
 let secciones = document.querySelectorAll(".seccion");
+
 
 
 
 secciones.forEach(function(seccion){
 
 
+
 seccion.classList.remove("activa");
 
 
+
 });
+
 
 
 
@@ -1868,6 +2062,8 @@ document.getElementById(id).classList.add("activa");
 
 
 </script>
+
+
 
 
 
