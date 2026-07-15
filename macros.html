@@ -1,1 +1,569 @@
 
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>COE | Macros Operativas</title>
+
+
+<style>
+
+*{
+    box-sizing:border-box;
+}
+
+
+body{
+
+    margin:0;
+    background:#090909;
+    color:white;
+    font-family:Arial, Helvetica, sans-serif;
+
+}
+
+
+/* CABECERA */
+
+header{
+
+    background:
+    linear-gradient(180deg,#182018,#080808);
+
+    border-bottom:2px solid #c9a227;
+
+    padding:25px;
+
+    text-align:center;
+
+}
+
+
+header img{
+
+    width:100px;
+
+}
+
+
+h1{
+
+    color:#c9a227;
+
+}
+
+
+.subtitulo{
+
+    color:#ccc;
+
+}
+
+
+
+/* BOTON VOLVER */
+
+
+.volver{
+
+    display:inline-block;
+
+    margin:20px;
+
+    padding:12px 25px;
+
+    background:#556b2f;
+
+    color:white;
+
+    text-decoration:none;
+
+    font-weight:bold;
+
+}
+
+
+
+.volver:hover{
+
+    background:#718b3c;
+
+}
+
+
+
+/* CONTENIDO */
+
+
+.contenedor{
+
+    max-width:1200px;
+
+    margin:auto;
+
+    padding:20px;
+
+}
+
+
+
+.categoria{
+
+    margin-bottom:40px;
+
+}
+
+
+
+.categoria h2{
+
+    color:#c9a227;
+
+    border-bottom:1px solid #c9a227;
+
+    padding-bottom:10px;
+
+}
+
+
+
+/* MACROS */
+
+
+.macro{
+
+    background:#151515;
+
+    border:1px solid #444;
+
+    padding:15px;
+
+    margin:12px 0;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    gap:20px;
+
+}
+
+
+
+.texto{
+
+    flex:1;
+
+    font-family:monospace;
+
+    color:#ddd;
+
+}
+
+
+
+
+button{
+
+    background:#556b2f;
+
+    color:white;
+
+    border:none;
+
+    padding:12px 20px;
+
+    cursor:pointer;
+
+    font-weight:bold;
+
+}
+
+
+
+button:hover{
+
+    background:#718b3c;
+
+}
+
+
+
+/* AVISO */
+
+
+#mensaje{
+
+    position:fixed;
+
+    bottom:25px;
+
+    right:25px;
+
+    background:#c9a227;
+
+    color:black;
+
+    padding:15px 25px;
+
+    display:none;
+
+    font-weight:bold;
+
+}
+
+
+
+@media(max-width:700px){
+
+.macro{
+
+    flex-direction:column;
+
+    align-items:stretch;
+
+}
+
+
+}
+
+
+
+</style>
+
+</head>
+
+
+<body>
+
+
+
+<header>
+
+
+<img src="./assets/images/logo.png">
+
+
+<h1>
+⌨️ MACROS OPERATIVAS COE
+</h1>
+
+
+<div class="subtitulo">
+Comando de Operaciones Especiales
+<br>
+Honor • Disciplina • Sacrificio
+</div>
+
+
+<a class="volver" href="index.html">
+← Volver al COE
+</a>
+
+
+</header>
+
+
+
+
+
+
+<div class="contenedor">
+
+
+
+
+
+
+
+<div class="categoria">
+
+<h2>
+🎖️ Presentación / Interacción
+</h2>
+
+
+
+<div class="macro">
+
+<div class="texto">
+/me [COE] Buenas tardes señor/señora, mi nombre es (Nombre) [Rango], miembro del Comando de Operaciones Especiales del Ejército. ¿En qué puedo ayudarle?
+</div>
+
+
+<button onclick="copiar(this)">
+COPIAR
+</button>
+
+
+</div>
+
+
+
+
+<div class="macro">
+
+<div class="texto">
+/me [COE] Permanezca tranquilo y siga las instrucciones del personal táctico.
+</div>
+
+
+<button onclick="copiar(this)">
+COPIAR
+</button>
+
+
+</div>
+
+
+
+
+
+<div class="macro">
+
+<div class="texto">
+/do [COE] El operador mantiene postura táctica y observa constantemente el entorno.
+</div>
+
+
+<button onclick="copiar(this)">
+COPIAR
+</button>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+
+<div class="categoria">
+
+<h2>
+🛡️ Control de Zona / Seguridad
+</h2>
+
+
+
+<div class="macro">
+
+<div class="texto">
+/me [COE] ¡ATENCIÓN! Área restringida. Tiene 5 segundos para retirarse inmediatamente.
+</div>
+
+
+<button onclick="copiar(this)">
+COPIAR
+</button>
+
+
+</div>
+
+
+
+
+<div class="macro">
+
+<div class="texto">
+/me [COE] ¡RETROCEDA AHORA! El incumplimiento de las órdenes podrá ser considerado amenaza.
+</div>
+
+
+<button onclick="copiar(this)">
+COPIAR
+</button>
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+
+
+<div class="categoria">
+
+<h2>
+⚔️ Operaciones Tácticas
+</h2>
+
+
+
+<div class="macro">
+
+<div class="texto">
+/me [COE] Procede a ingresar tácticamente al área bajo protocolo de alto riesgo.
+</div>
+
+
+<button onclick="copiar(this)">
+COPIAR
+</button>
+
+
+</div>
+
+
+
+
+<div class="macro">
+
+<div class="texto">
+/do [COE] El convoy blindado mantiene formación y cobertura táctica.
+</div>
+
+
+<button onclick="copiar(this)">
+COPIAR
+</button>
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+
+
+<div class="categoria">
+
+<h2>
+📡 Comunicaciones / Flobby
+</h2>
+
+
+
+
+<div class="macro">
+
+<div class="texto">
+/flobby [COE] (10-9) En ruta.
+</div>
+
+
+<button onclick="copiar(this)">
+COPIAR
+</button>
+
+
+</div>
+
+
+
+
+<div class="macro">
+
+<div class="texto">
+/flobby [COE] Código Rojo (Despliegue táctico inmediato).
+</div>
+
+
+<button onclick="copiar(this)">
+COPIAR
+</button>
+
+
+</div>
+
+
+
+
+<div class="macro">
+
+<div class="texto">
+/flobby [COE] Operativo finalizado con éxito.
+</div>
+
+
+<button onclick="copiar(this)">
+COPIAR
+</button>
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+
+
+</div>
+
+
+
+
+
+<div id="mensaje">
+Macro copiada ✓
+</div>
+
+
+
+
+
+
+<script>
+
+
+function copiar(boton){
+
+
+let texto = boton.parentElement.querySelector(".texto").innerText;
+
+
+navigator.clipboard.writeText(texto);
+
+
+
+let mensaje=document.getElementById("mensaje");
+
+
+mensaje.style.display="block";
+
+
+setTimeout(function(){
+
+mensaje.style.display="none";
+
+},1500);
+
+
+
+}
+
+
+
+</script>
+
+
+
+</body>
+
+</html>
