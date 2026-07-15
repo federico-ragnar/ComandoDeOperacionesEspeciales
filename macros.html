@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="es">
 
@@ -12,77 +11,98 @@
 
 <style>
 
+
 *{
-    box-sizing:border-box;
+
+margin:0;
+padding:0;
+box-sizing:border-box;
+
 }
+
 
 
 body{
 
-    margin:0;
-    background:#090909;
-    color:white;
-    font-family:Arial, Helvetica, sans-serif;
+background:#080808;
+color:white;
+font-family:Arial, Helvetica, sans-serif;
 
 }
+
 
 
 /* CABECERA */
 
+
 header{
 
-    background:
-    linear-gradient(180deg,#182018,#080808);
+background:
+linear-gradient(
+180deg,
+#182018,
+#090909
+);
 
-    border-bottom:2px solid #c9a227;
 
-    padding:25px;
+border-bottom:2px solid #c9a227;
 
-    text-align:center;
+padding:25px;
+
+text-align:center;
+
 
 }
+
 
 
 header img{
 
-    width:100px;
+width:100px;
 
 }
+
 
 
 h1{
 
-    color:#c9a227;
+color:#c9a227;
+
+font-size:36px;
+
+margin:15px;
 
 }
+
 
 
 .subtitulo{
 
-    color:#ccc;
+color:#ccc;
+
+font-size:18px;
 
 }
 
 
 
-/* BOTON VOLVER */
 
 
 .volver{
 
-    display:inline-block;
+display:inline-block;
 
-    margin:20px;
+margin-top:20px;
 
-    padding:12px 25px;
+background:#556b2f;
 
-    background:#556b2f;
+color:white;
 
-    color:white;
+padding:12px 30px;
 
-    text-decoration:none;
+text-decoration:none;
 
-    font-weight:bold;
+font-weight:bold;
 
 }
 
@@ -90,9 +110,11 @@ h1{
 
 .volver:hover{
 
-    background:#718b3c;
+background:#718b3c;
 
 }
+
+
 
 
 
@@ -101,19 +123,21 @@ h1{
 
 .contenedor{
 
-    max-width:1200px;
+max-width:1300px;
 
-    margin:auto;
+margin:auto;
 
-    padding:20px;
+padding:30px;
 
 }
 
 
 
+
+
 .categoria{
 
-    margin-bottom:40px;
+margin-bottom:45px;
 
 }
 
@@ -121,13 +145,18 @@ h1{
 
 .categoria h2{
 
-    color:#c9a227;
+color:#c9a227;
 
-    border-bottom:1px solid #c9a227;
+border-bottom:2px solid #c9a227;
 
-    padding-bottom:10px;
+padding-bottom:10px;
+
+margin-bottom:20px;
 
 }
+
+
+
 
 
 
@@ -136,21 +165,21 @@ h1{
 
 .macro{
 
-    background:#151515;
+background:#141414;
 
-    border:1px solid #444;
+border:1px solid #444;
 
-    padding:15px;
+padding:20px;
 
-    margin:12px 0;
+margin-bottom:15px;
 
-    display:flex;
+display:flex;
 
-    justify-content:space-between;
+align-items:center;
 
-    align-items:center;
+justify-content:space-between;
 
-    gap:20px;
+gap:20px;
 
 }
 
@@ -158,84 +187,100 @@ h1{
 
 .texto{
 
-    flex:1;
+font-family:monospace;
 
-    font-family:monospace;
+font-size:16px;
 
-    color:#ddd;
+line-height:1.5;
 
-}
-
-
-
-
-button{
-
-    background:#556b2f;
-
-    color:white;
-
-    border:none;
-
-    padding:12px 20px;
-
-    cursor:pointer;
-
-    font-weight:bold;
+color:#ddd;
 
 }
 
 
 
-button:hover{
 
-    background:#718b3c;
+
+.copiar{
+
+background:#556b2f;
+
+color:white;
+
+border:none;
+
+padding:12px 25px;
+
+cursor:pointer;
+
+font-weight:bold;
+
+min-width:110px;
 
 }
 
 
 
-/* AVISO */
+.copiar:hover{
+
+background:#718b3c;
+
+}
+
+
+
 
 
 #mensaje{
 
-    position:fixed;
 
-    bottom:25px;
+position:fixed;
 
-    right:25px;
+right:30px;
 
-    background:#c9a227;
+bottom:30px;
 
-    color:black;
+background:#c9a227;
 
-    padding:15px 25px;
+color:black;
 
-    display:none;
+padding:15px 25px;
 
-    font-weight:bold;
+font-weight:bold;
+
+display:none;
+
 
 }
+
+
 
 
 
 @media(max-width:700px){
 
+
 .macro{
 
-    flex-direction:column;
+flex-direction:column;
 
-    align-items:stretch;
-
-}
-
+align-items:stretch;
 
 }
 
 
+.copiar{
+
+width:100%;
+
+}
+
+
+
+}
 
 </style>
+
 
 </head>
 
@@ -256,14 +301,20 @@ button:hover{
 
 
 <div class="subtitulo">
+
 Comando de Operaciones Especiales
+
 <br>
+
 Honor • Disciplina • Sacrificio
+
 </div>
 
 
 <a class="volver" href="index.html">
-← Volver al COE
+
+← VOLVER AL COE
+
 </a>
 
 
@@ -273,19 +324,15 @@ Honor • Disciplina • Sacrificio
 
 
 
-
 <div class="contenedor">
-
-
-
-
-
+    <!-- ================= PRESENTACIÓN ================= -->
 
 
 <div class="categoria">
 
+
 <h2>
-🎖️ Presentación / Interacción
+🎖️ PRESENTACIÓN / INTERACCIÓN
 </h2>
 
 
@@ -296,14 +343,11 @@ Honor • Disciplina • Sacrificio
 /me [COE] Buenas tardes señor/señora, mi nombre es (Nombre) [Rango], miembro del Comando de Operaciones Especiales del Ejército. ¿En qué puedo ayudarle?
 </div>
 
-
-<button onclick="copiar(this)">
+<button class="copiar" onclick="copiar(this)">
 COPIAR
 </button>
 
-
 </div>
-
 
 
 
@@ -313,15 +357,25 @@ COPIAR
 /me [COE] Permanezca tranquilo y siga las instrucciones del personal táctico.
 </div>
 
-
-<button onclick="copiar(this)">
+<button class="copiar" onclick="copiar(this)">
 COPIAR
 </button>
-
 
 </div>
 
 
+
+<div class="macro">
+
+<div class="texto">
+/me [COE] El área se encuentra bajo control militar. Mantenga distancia por su seguridad.
+</div>
+
+<button class="copiar" onclick="copiar(this)">
+COPIAR
+</button>
+
+</div>
 
 
 
@@ -331,12 +385,10 @@ COPIAR
 /do [COE] El operador mantiene postura táctica y observa constantemente el entorno.
 </div>
 
-
-<button onclick="copiar(this)">
+<button class="copiar" onclick="copiar(this)">
 COPIAR
 </button>
 
-
 </div>
 
 
@@ -347,12 +399,17 @@ COPIAR
 
 
 
+
+
+
+<!-- ================= CONTROL DE ZONA ================= -->
 
 
 <div class="categoria">
 
+
 <h2>
-🛡️ Control de Zona / Seguridad
+🛡️ CONTROL DE ZONA / SEGURIDAD
 </h2>
 
 
@@ -363,14 +420,11 @@ COPIAR
 /me [COE] ¡ATENCIÓN! Área restringida. Tiene 5 segundos para retirarse inmediatamente.
 </div>
 
-
-<button onclick="copiar(this)">
+<button class="copiar" onclick="copiar(this)">
 COPIAR
 </button>
 
-
 </div>
-
 
 
 
@@ -380,11 +434,37 @@ COPIAR
 /me [COE] ¡RETROCEDA AHORA! El incumplimiento de las órdenes podrá ser considerado amenaza.
 </div>
 
-
-<button onclick="copiar(this)">
+<button class="copiar" onclick="copiar(this)">
 COPIAR
 </button>
 
+</div>
+
+
+
+<div class="macro">
+
+<div class="texto">
+/do [COE] El personal táctico asegura el perímetro y evacúa civiles cercanos.
+</div>
+
+<button class="copiar" onclick="copiar(this)">
+COPIAR
+</button>
+
+</div>
+
+
+
+<div class="macro">
+
+<div class="texto">
+/me [COE] Procede a establecer perímetro de seguridad en la zona de riesgo.
+</div>
+
+<button class="copiar" onclick="copiar(this)">
+COPIAR
+</button>
 
 </div>
 
@@ -396,13 +476,48 @@ COPIAR
 
 
 
+
+
+
+<!-- ================= OPERACIONES ================= -->
 
 
 <div class="categoria">
 
+
 <h2>
-⚔️ Operaciones Tácticas
+⚔️ OPERACIONES TÁCTICAS
 </h2>
+
+
+
+<div class="macro">
+
+<div class="texto">
+/do [COE] ¡TÁSER! ¡TÁSER! ¡TÁSER! Procede a reducir al sospechoso.
+</div>
+
+<button class="copiar" onclick="copiar(this)">
+COPIAR
+</button>
+
+</div>
+
+
+
+
+<div class="macro">
+
+<div class="texto">
+/do [COE] Utiliza fuerza proporcional para proteger civiles, compañeros y personal militar.
+</div>
+
+<button class="copiar" onclick="copiar(this)">
+COPIAR
+</button>
+
+</div>
+
 
 
 
@@ -412,11 +527,9 @@ COPIAR
 /me [COE] Procede a ingresar tácticamente al área bajo protocolo de alto riesgo.
 </div>
 
-
-<button onclick="copiar(this)">
+<button class="copiar" onclick="copiar(this)">
 COPIAR
 </button>
-
 
 </div>
 
@@ -429,30 +542,174 @@ COPIAR
 /do [COE] El convoy blindado mantiene formación y cobertura táctica.
 </div>
 
-
-<button onclick="copiar(this)">
+<button class="copiar" onclick="copiar(this)">
 COPIAR
 </button>
 
-
-</div>
-
-
-
 </div>
 
 
 
 
+<div class="macro">
 
+<div class="texto">
+/me [COE] Procede a asegurar entradas, salidas y posibles rutas de escape.
+</div>
+
+<button class="copiar" onclick="copiar(this)">
+COPIAR
+</button>
+
+</div>
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<!-- ================= INTELIGENCIA ================= -->
 
 
 <div class="categoria">
 
+
 <h2>
-📡 Comunicaciones / Flobby
+🔎 INVESTIGACIÓN / INTELIGENCIA
 </h2>
 
+
+
+<div class="macro">
+
+<div class="texto">
+/me [COE] Procede a recopilar pruebas y evidencias relacionadas a actividades sospechosas.
+</div>
+
+<button class="copiar" onclick="copiar(this)">
+COPIAR
+</button>
+
+</div>
+
+
+
+
+<div class="macro">
+
+<div class="texto">
+/do [COE] El operador toma fotografías y registra información relevante.
+</div>
+
+<button class="copiar" onclick="copiar(this)">
+COPIAR
+</button>
+
+</div>
+
+
+
+
+<div class="macro">
+
+<div class="texto">
+/me [COE] Inicia investigación preventiva sobre posible amenaza organizada.
+</div>
+
+<button class="copiar" onclick="copiar(this)">
+COPIAR
+</button>
+
+</div>
+
+
+
+
+<div class="macro">
+
+<div class="texto">
+/do [COE] El personal de inteligencia analiza movimientos y comportamiento sospechoso.
+</div>
+
+<button class="copiar" onclick="copiar(this)">
+COPIAR
+</button>
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+<!-- ================= ENTRENAMIENTO ================= -->
+
+
+<div class="categoria">
+
+
+<h2>
+🏋️ ENTRENAMIENTOS
+</h2>
+
+
+
+<div class="macro">
+
+<div class="texto">
+/flobby [COE] Inicia entrenamiento táctico avanzado para el personal operativo.
+</div>
+
+<button class="copiar" onclick="copiar(this)">
+COPIAR
+</button>
+
+</div>
+
+
+
+
+<div class="macro">
+
+<div class="texto">
+/do [COE] El entrenamiento se desarrolla bajo supervisión del Comando.
+</div>
+
+<button class="copiar" onclick="copiar(this)">
+COPIAR
+</button>
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+<!-- ================= COMUNICACIONES ================= -->
+
+
+<div class="categoria">
+
+
+<h2>
+📡 COMUNICACIONES / FLOBBY
+</h2>
 
 
 
@@ -462,14 +719,39 @@ COPIAR
 /flobby [COE] (10-9) En ruta.
 </div>
 
-
-<button onclick="copiar(this)">
+<button class="copiar" onclick="copiar(this)">
 COPIAR
 </button>
 
+</div>
+
+
+
+<div class="macro">
+
+<div class="texto">
+/flobby [COE] (10-10) Situación bajo control.
+</div>
+
+<button class="copiar" onclick="copiar(this)">
+COPIAR
+</button>
 
 </div>
 
+
+
+<div class="macro">
+
+<div class="texto">
+/flobby [COE] (10-20) Operativo en progreso.
+</div>
+
+<button class="copiar" onclick="copiar(this)">
+COPIAR
+</button>
+
+</div>
 
 
 
@@ -479,14 +761,179 @@ COPIAR
 /flobby [COE] Código Rojo (Despliegue táctico inmediato).
 </div>
 
-
-<button onclick="copiar(this)">
+<button class="copiar" onclick="copiar(this)">
 COPIAR
 </button>
+
+</div>
+
+
+
+<div class="macro">
+
+<div class="texto">
+/flobby [COE] Código Negro (Operación crítica en ejecución).
+</div>
+
+<button class="copiar" onclick="copiar(this)">
+COPIAR
+</button>
+
+</div>
 
 
 </div>
 
+
+
+
+
+
+<!-- ================= UBICACIONES ================= -->
+
+
+<div class="categoria">
+
+
+<h2>
+📍 UBICACIONES / ZONAS
+</h2>
+
+
+
+<div class="macro">
+
+<div class="texto">
+/flobby [COE] Zona Alfa (Desplazamiento hacia Torre Radio).
+</div>
+
+<button class="copiar" onclick="copiar(this)">
+COPIAR
+</button>
+
+</div>
+
+
+
+<div class="macro">
+
+<div class="texto">
+/flobby [COE] Zona Bravo (Desplazamiento hacia Paseo de la Fama).
+</div>
+
+<button class="copiar" onclick="copiar(this)">
+COPIAR
+</button>
+
+</div>
+
+
+
+<div class="macro">
+
+<div class="texto">
+/flobby [COE] Zona Charlie (Desplazamiento hacia Almacén de Carga).
+</div>
+
+<button class="copiar" onclick="copiar(this)">
+COPIAR
+</button>
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+<!-- ================= NEGOCIACIÓN ================= -->
+
+
+<div class="categoria">
+
+
+<h2>
+🤝 NEGOCIACIÓN
+</h2>
+
+
+
+<div class="macro">
+
+<div class="texto">
+/me [COE] Procede a iniciar protocolo de negociación con los sospechosos.
+</div>
+
+<button class="copiar" onclick="copiar(this)">
+COPIAR
+</button>
+
+</div>
+
+
+
+<div class="macro">
+
+<div class="texto">
+/do [COE] El negociador mantiene tono calmado y profesional.
+</div>
+
+<button class="copiar" onclick="copiar(this)">
+COPIAR
+</button>
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+<!-- ================= FINALIZACIÓN ================= -->
+
+
+<div class="categoria">
+
+
+<h2>
+🏁 FINALIZACIÓN DE OPERATIVOS
+</h2>
+
+
+
+<div class="macro">
+
+<div class="texto">
+/me [COE] Procede a asegurar la escena y verificar posibles amenazas restantes.
+</div>
+
+<button class="copiar" onclick="copiar(this)">
+COPIAR
+</button>
+
+</div>
+
+
+
+<div class="macro">
+
+<div class="texto">
+/flobby [COE] El área queda completamente asegurada por el Comando.
+</div>
+
+<button class="copiar" onclick="copiar(this)">
+COPIAR
+</button>
+
+</div>
 
 
 
@@ -496,19 +943,29 @@ COPIAR
 /flobby [COE] Operativo finalizado con éxito.
 </div>
 
-
-<button onclick="copiar(this)">
+<button class="copiar" onclick="copiar(this)">
 COPIAR
 </button>
 
+</div>
+
+
+
+<div class="macro">
+
+<div class="texto">
+/flobby [COE] Regresando a base central.
+</div>
+
+<button class="copiar" onclick="copiar(this)">
+COPIAR
+</button>
 
 </div>
 
 
 
 </div>
-
-
 
 
 
@@ -523,7 +980,6 @@ COPIAR
 <div id="mensaje">
 Macro copiada ✓
 </div>
-
 
 
 
