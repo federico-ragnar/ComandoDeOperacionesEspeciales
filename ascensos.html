@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>COE | Requisitos de Ascenso</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html,body{
+    width:100%;
+    min-height:100%;
+    background:#080808;
+    color:white;
+    font-family:Arial, Helvetica, sans-serif;
+    overflow-x:hidden;
+}
+
+header{
+    background:
+    linear-gradient(
+        180deg,
+        #182018,
+        #090909
+    );
+    border-bottom:2px solid #c9a227;
+    padding:25px;
+    text-align:center;
+}
+
+header img{
+    width:100px;
+}
+
+h1{
+    color:#c9a227;
+    font-size:36px;
+    margin:15px;
+}
+
+.subtitulo{
+    color:#ccc;
+    font-size:18px;
+    line-height:1.6;
+}
+
+.volver{
+    display:inline-block;
+    margin-top:20px;
+    background:#556b2f;
+    color:white;
+    padding:12px 30px;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+.volver:hover{
+    background:#718b3c;
+}
+
+.contenedor{
+    max-width:1300px;
+    margin:auto;
+    padding:30px;
+}
+
+.introduccion{
+    max-width:1100px;
+    margin:0 auto 30px;
+    background:#111;
+    border-left:4px solid #556b2f;
+    padding:25px;
+    line-height:1.7;
+    color:#ddd;
+}
+
+.selector{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:15px;
+    margin:30px auto 40px;
+    max-width:1100px;
+}
+
+.selector button{
+    background:#141414;
+    color:white;
+    border:1px solid #444;
+    border-left:4px solid #c9a227;
+    padding:18px;
+    cursor:pointer;
+    text-align:left;
+    font-weight:bold;
+    font-size:15px;
+    transition:.3s;
+}
+
+.selector button:hover,
+.selector button.activo{
+    background:#556b2f;
+    border-color:#c9a227;
+}
+
+.ascenso{
+    display:none;
+    max-width:1100px;
+    margin:0 auto 40px;
+    animation:entrada .35s ease;
+}
+
+.ascenso.activo{
+    display:block;
+}
+
+@keyframes entrada{
+    from{
+        opacity:0;
+        transform:translateY(15px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+.tituloAscenso{
+    background:#182018;
+    border:1px solid #c9a227;
+    border-bottom:3px solid #c9a227;
+    padding:22px;
+}
+
+.tituloAscenso h2{
+    color:#c9a227;
+    margin-bottom:8px;
+}
+
+.tituloAscenso p{
+    color:#ccc;
+}
+
+.bloque{
+    background:#111;
+    border-left:4px solid #556b2f;
+    padding:25px;
+    margin-top:20px;
+}
+
+.bloque h3{
+    color:#c9a227;
+    margin-bottom:18px;
+}
+
+.bloque ul{
+    margin-left:22px;
+}
+
+.bloque li{
+    margin:9px 0;
+    line-height:1.6;
+}
+
+.pregunta{
+    background:#151515;
+    border:1px solid #444;
+    margin:15px 0;
+    overflow:hidden;
+}
+
+.pregunta button{
+    width:100%;
+    background:#151515;
+    color:white;
+    border:0;
+    padding:18px 20px;
+    text-align:left;
+    cursor:pointer;
+    font-size:16px;
+    font-weight:bold;
+}
+
+.pregunta button:hover{
+    background:#1d251d;
+}
+
+.pregunta .respuesta{
+    display:none;
+    padding:0 20px 20px;
+    color:#ddd;
+    line-height:1.7;
+    border-top:1px solid #333;
+}
+
+.pregunta.abierta .respuesta{
+    display:block;
+}
+
+.pregunta.abierta button{
+    color:#c9a227;
+}
+
+.etiqueta{
+    display:inline-block;
+    padding:5px 9px;
+    margin-right:6px;
+    margin-bottom:7px;
+    background:#556b2f;
+    font-size:12px;
+    font-weight:bold;
+}
+
+.alerta{
+    border-left-color:#c9a227;
+}
+
+.nota{
+    color:#bbb;
+    font-size:14px;
+    margin-top:15px;
+}
+
+.reglas{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:15px;
+}
+
+.regla{
+    background:#151515;
+    border:1px solid #444;
+    padding:18px;
+}
+
+.regla b{
+    color:#c9a227;
+}
+
+.volverArriba{
+    text-align:center;
+    margin-top:30px;
+}
+
+@media(max-width:700px){
+    h1{
+        font-size:29px;
+    }
+
+    .contenedor{
+        padding:20px 15px;
+    }
+
+    .selector{
+        grid-template-columns:1fr;
+    }
+
+    .tituloAscenso h2{
+        font-size:21px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <img src="./assets/images/logo.png" alt="Logo COE">
+
+    <h1>🎖️ REQUISITOS DE ASCENSO</h1>
+
+    <div class="subtitulo">
+        Comando de Operaciones Especiales
+        <br>
+        Honor • Disciplina • Sacrificio
+    </div>
+
+    <a class="volver" href="index.html">← VOLVER AL COE</a>
+</header>
+
+<div class="contenedor">
+
+    <div class="introduccion">
+        <strong>📋 SISTEMA DE ASCENSOS COE</strong>
+        <br><br>
+        Esta sección reúne los requisitos, responsabilidades y material de estudio
+        correspondiente a cada ascenso. Seleccione el rango que desea consultar.
+        Las respuestas mostradas funcionan como guía de estudio y se encuentran
+        basadas en la normativa y responsabilidades proporcionadas para el COE.
+    </div>
+
+    <div class="selector">
+        <button onclick="mostrarAscenso('sgt-sgt1',this)">🪖 Sargento → Sargento 1.º</button>
+        <button onclick="mostrarAscenso('sgt1-mayor',this)">🪖 Sargento 1.º → Sargento Mayor</button>
+        <button onclick="mostrarAscenso('mayor-tte',this)">🎖️ Sargento Mayor → Teniente</button>
+        <button onclick="mostrarAscenso('tte-cpt',this)">🎖️ Teniente → Capitán</button>
+        <button onclick="mostrarAscenso('cpt-mayor',this)">🎖️ Capitán → Mayor</button>
+        <button onclick="mostrarAscenso('mayor-coronel',this)">🎖️ Mayor → Coronel</button>
+    </div>
+
+    <!-- SARGENTO -> SARGENTO 1 -->
+    <section id="sgt-sgt1" class="ascenso">
+        <div class="tituloAscenso">
+            <h2>SARGENTO → SARGENTO 1.º</h2>
+            <p>Requisitos y evaluación correspondiente al ascenso.</p>
+        </div>
+
+        <div class="bloque">
+            <h3>📌 Responsabilidades de Sargento</h3>
+            <ul>
+                <li>Puede utilizar armamento M4.</li>
+                <li>Puede participar en eventos críticos, como robo de material.</li>
+                <li>No realiza guardia sin autorización.</li>
+                <li>Debe proteger la Puerta Norte o el Aeropuerto.</li>
+                <li>Debe redirigir a los civiles interesados en enlistarse hacia la Puerta Sur.</li>
+            </ul>
+        </div>
+
+        <div class="bloque">
+            <h3>📚 Preguntas de evaluación</h3>
+
+            <div class="pregunta">
+                <button onclick="toggleRespuesta(this)">1. ¿Cuáles son las obligaciones de su rango actual y del rango al que aspira?</button>
+                <div class="respuesta">
+                    Debe conocer las funciones correspondientes al Sargento y las funciones adicionales
+                    que incorpora el rango de Sargento 1.º, especialmente el conocimiento del beneficio
+                    y equipamiento del chaleco táctico.
+                </div>
+            </div>
+
+            <div class="pregunta">
+                <button onclick="toggleRespuesta(this)">2. ¿Qué establece RP1?</button>
+                <div class="respuesta">
+                    RP1 corresponde a Deathmatch: causar daño o matar directamente a otro jugador sin
+                    una razón o contexto válido. La normativa indicada establece una sanción de 20 minutos
+                    de cárcel.
+                </div>
+            </div>
+
+            <div class="pregunta">
+                <button onclick="toggleRespuesta(this)">3. ¿Qué establece RP2?</button>
+                <div class="respuesta">
+                    RP2 corresponde a Auto Deathmatch: causar daño estructural o destruir el vehículo
+                    de otro jugador utilizando el propio vehículo o un arma sin un motivo legítimo de RP.
+                </div>
+            </div>
+
+            <div class="pregunta">
+                <button onclick="toggleRespuesta(this)">4. ¿Qué establece RP13?</button>
+                <div class="respuesta">
+                    RP13 corresponde a NRP de facción: comportarse de forma contraria al rol de la
+                    facción, incluyendo acciones como liberar o ejecutar ilegalmente prisioneros o civiles.
+                </div>
+            </div>
+
+            <div class="pregunta">
+                <button onclick="toggleRespuesta(this)">5. Mencione las 5 reglas básicas de Base.</button>
+                <div class="respuesta">
+                    <ol>
+                        <li>No permanecer AFK; si debe ausentarse, debe cerrar la sesión.</li>
+                        <li>No conducir vehículos dentro de las instalaciones sin autorización explícita del General.</li>
+                        <li>No abandonar el perímetro de la Base sin la autorización correspondiente.</li>
+                        <li>Respetar la cadena de mando y mantener una conducta respetuosa.</li>
+                        <li>No utilizar armas de forma ilegal o injustificada ni jugar con armas o táser.</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SGT 1 -> SGT MAYOR -->
+    <section id="sgt1-mayor" class="ascenso">
+        <div class="tituloAscenso">
+            <h2>SARGENTO 1.º → SARGENTO MAYOR</h2>
+            <p>Evaluación de conocimientos, normativa y responsabilidades.</p>
+        </div>
+
+        <div class="bloque">
+            <h3>📌 Responsabilidades de Sargento 1.º</h3>
+            <ul>
+                <li>Mantiene las funciones correspondientes al Sargento.</li>
+                <li>Debe conocer el beneficio estratégico y el equipamiento del chaleco táctico.</li>
+            </ul>
+        </div>
+
+        <div class="bloque">
+            <h3>📚 Preguntas de evaluación</h3>
+
+            <div class="pregunta">
+                <button onclick="toggleRespuesta(this)">1. ¿Cuáles son las obligaciones de su rango actual y del rango al que aspira?</button>
+                <div class="respuesta">
+                    Debe dominar las funciones del Sargento 1.º y conocer las responsabilidades
+                    correspondientes al Sargento Mayor, especialmente su autoridad sobre los Cascos Suaves.
+                </div>
+            </div>
+
+            <div class="pregunta">
+                <button onclick="toggleRespuesta(this)">2. ¿Qué establece RP1?</button>
+                <div class="respuesta">Deathmatch: daño o muerte directa sin razón o contexto válido. Sanción indicada: 20 minutos de cárcel.</div>
+            </div>
+
+            <div class="pregunta">
+                <button onclick="toggleRespuesta(this)">3. ¿Qué establece RP2?</button>
+                <div class="respuesta">Auto Deathmatch: daño o destrucción de un vehículo sin motivo legítimo de RP.</div>
+            </div>
+
+            <div class="pregunta">
+                <button onclick="toggleRespuesta(this)">4. ¿Qué establece RP13?</button>
+                <div class="respuesta">NRP de facción: comportamiento contrario al rol de la facción, con posibles sanciones de facción y/o administrativas.</div>
+            </div>
+
+            <div class="pregunta">
+                <button onclick="toggleRespuesta(this)">5. ¿Qué establece RP14?</button>
+                <div class="respuesta">
+                    Prohíbe el acoso sexual y las conductas sexuales no consentidas, además de determinadas
+                    expresiones ofensivas. Las acciones sexuales requieren consentimiento OOC y no deben
+                    realizarse en lugares públicos o de alta circulación.
+                </div>
+            </div>
+
+            <div class="pregunta">
+                <button onclick="toggleRespuesta(this)">6. ¿Qué establece RP15?</button>
+                <div class="respuesta">
+                    Prohíbe interrumpir intencionalmente operaciones de la facción o provocar a sus miembros
+                    con el objetivo de interferir en ellas. La sanción indicada es de 30 minutos de cárcel.
+                </div>
+            </div>
+
+            <div class="pregunta">
+                <button onclick="toggleRespuesta(this)">7. Mencione las 5 reglas básicas de Base.</button>
+                <div class="respuesta">
+                    <ol>
+                        <li>No AFK.</li>
+                        <li>No conducir dentro de instalaciones sin autorización del General.</li>
+                        <li>No abandonar el perímetro sin autorización correspondiente.</li>
+                        <li>Respetar cadena de mando y mantener conducta profesional.</li>
+                        <li>No utilizar armas o táser injustificadamente ni jugar con armamento.</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+
+        <div class="bloque alerta">
+            <h3>⚠️ Responsabilidad adicional del Sargento Mayor</h3>
+            <p>
+                Tiene autoridad sobre los Cascos Suaves y debe asegurar que reciban y cumplan
+                órdenes dentro del alcance correspondiente. También está autorizado a interactuar
+                con ciudadanos en la Puerta Norte.
+            </p>
+        </div>
+    </section>
+
+    <!-- SGT MAYOR -> TTE -->
+    <section id="mayor-tte" class="ascenso">
+        <div class="tituloAscenso">
+            <h2>SARGENTO MAYOR → TENIENTE</h2>
+            <p>Evaluación ampliada de normativa, mando y situaciones con civiles.</p>
+        </div>
+
+        <div class="bloque">
+            <h3>📌 Responsabilidades de Teniente</h3>
+            <ul>
+                <li>Autoridad y responsabilidad sobre las funciones propias del rango.</li>
+                <li>Puede utilizar Casco Duro.</li>
+                <li>Protege las Puertas Sur y Norte.</li>
+                <li>Entrena a nuevos reclutas y los orienta cuando sea solicitado.</li>
+                <li>Debe asegurar que los Cascos Suaves cumplan órdenes y actúen dentro de su alcance.</li>
+            </ul>
+        </div>
+
+        <div class="bloque">
+            <h3>📚 Evaluación</h3>
+
+            <div class="pregunta">
+                <button onclick="toggleRespuesta(this)">1. ¿Cuáles son las obligaciones de su rango actual y del rango al que aspira?</button>
+                <div class="respuesta">Debe conocer las funciones del Sargento Mayor y las responsabilidades de Teniente, incluyendo Casco Duro, protección de puertas y formación de reclutas.</div>
+            </div>
+
+            <div class="pregunta">
+                <button onclick="toggleRespuesta(this)">2. ¿Qué establece RP1?</button>
+                <div class="respuesta">Deathmatch: daño o muerte directa sin razón o contexto válido.</div>
+            </div>
+
+            <div class="pregunta">
+                <button onclick="toggleRespuesta(this)">3. ¿Qué establece RP2?</button>
+                <div class="respuesta">Auto Deathmatch: daño o destrucción de vehículo sin motivo legítimo de RP.</div>
+            </div>
+
+            <div class="pregunta">
+                <button onclick="toggleRespuesta(this)">4. ¿Qué establece RP13?</button>
+                <div class="respuesta">NRP de facción: actuar contra el rol establecido de la facción.</div>
+            </div>
+
+            <div class="pregunta">
+                <button onclick="toggleRespuesta(this)">5. ¿Qué establece RP14?</button>
+                <div class="respuesta">Prohíbe acoso y conductas sexuales no consentidas; requiere consentimiento OOC para actos sexuales.</div>
+            </div>
+
+            <div class="pregunta">
+                <button onclick="toggleRespuesta(this)">6. ¿Qué establece RP15?</button>
+                <div class="respuesta">Prohíbe provocar o interrumpir intencionalmente las operaciones de la facción.</div>
+            </div>
+
+            <div class="pregunta">
+                <button onclick="toggleRespuesta(this)">7. ¿Qué establece CHAT1?</button>
+                <div class="respuesta">
+                    Prohíbe insultar a otros jugadores sin una razón válida de RP y exige mantener respeto OOC.
+                    La sanción indicada es de 24 horas de ban.
+                </div>
+            </div>
+
+            <div class="pregunta">
+                <button onclick="toggleRespuesta(this)">8. Mencione las 5 reglas básicas de Base.</button>
+                <div class="respuesta">AFK, vehículos dentro de instalaciones, salida del perímetro, cadena de mando y uso correcto del armamento.</div>
+            </div>
+
+            <div class="pregunta">
+                <button onclick="toggleRespuesta(this)">9. Mencione las 10 reglas de conducta del Ejército.</button>
+                <div class="respuesta">
+                    <ol>
+                        <li>Respeto a compañeros y civiles.</li>
+                        <li>Dirigirse a superiores como Señor/Señora.</li>
+                        <li>Prohibida la corrupción y los sobornos.</li>
+                        <li>Armas, fuerza y equipo especial solo bajo las condiciones establecidas.</li>
+                        <li>Vehículo Carrier únicamente con autorización.</li>
+                        <li>Cumplimiento de la cadena de mando y órdenes.</li>
+                        <li>No utilizar vehículos de la compañía para fines personales.</li>
+                        <li>Cumplir las reglas del servidor.</li>
+                        <li>No abandonar la base uniformado o armado sin permiso.</li>
+                        <li>Equivalencia disciplinaria: 2 advertencias = 1 reprimenda; 3 reprimendas = expulsión inmediata.</li>
+                    </ol>
+                </div>
+            </div>
+
+            <div class="pregunta">
+                <button onclick="toggleRespuesta(this)">10. ¿Cómo debe actuar frente a una situación con un civil?</button>
+                <div class="respuesta">
+                    La evaluación debe demostrar seguridad, manejo de crisis, diplomacia y una postura
+                    militar firme, priorizando efectividad, legalidad y la imagen de la facción.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TTE -> CPT -->
+    <section id="tte-cpt" class="ascenso">
+        <div class="tituloAscenso">
+            <h2>TENIENTE → CAPITÁN</h2>
+            <p>Evaluación de normativa, mando, abuso de sistemas y trato con civiles.</p>
+        </div>
+
+        <div class="bloque">
+            <h3>📌 Responsabilidades de Capitán</h3>
+            <ul>
+                <li>Mantiene las funciones correspondientes al Teniente.</li>
+                <li>Debe demostrar dominio de la cadena de mando y de la normativa.</li>
+            </ul>
+        </div>
+
+        <div class="bloque">
+            <h3>📚 Evaluación</h3>
+
+            <div class="pregunta">
+                <button onclick="toggleRespuesta(this)">1. ¿Qué debe conocer del rango?</button>
+                <div class="respuesta">Debe dominar sus funciones como Teniente y las responsabilidades correspondientes al rango de Capitán.</div>
+            </div>
+
+            <div class="pregunta">
+                <button onclick="toggleRespuesta(this)">2. ¿Qué establece RP11?</button>
+                <div class="respuesta">
+                    Prohíbe delitos o ataques en zonas protegidas, zonas de trabajo y vehículos en operación,
+                    incluyendo emboscadas inmediatamente fuera de estas zonas y actividad criminal cerca de
+                    hospitales o mercados de vehículos. La sanción indicada es de 30 a 60 minutos de cárcel.
+                </div>
+            </div>
+
+            <div class="pregunta">
+                <button onclick="toggleRespuesta(this)">3. ¿Qué establece CHAT1?</button>
+                <div class="respuesta">Prohíbe insultos sin razón válida de RP y exige respeto OOC. Sanción indicada: 24 horas de ban.</div>
+            </div>
+
+            <div class="pregunta">
+                <button onclick="toggleRespuesta(this)">4. ¿Qué establece ABUSE1?</button>
+                <div class="respuesta">
+                    Prohíbe aprovechar bugs, vulnerabilidades o funciones no previstas para obtener ventajas.
+                    Se exige juego limpio. La sanción indicada es una suspensión de cuenta de 1 a 30 días.
+                </div>
+            </div>
+
+            <div class="pregunta">
+                <button onclick="toggleRespuesta(this)">5. Mencione las 5 reglas básicas de Base.</button>
+                <div class="respuesta">No AFK, vehículos autorizados, salida autorizada, respeto a la cadena de mando y uso legal del armamento.</div>
+            </div>
+
+            <div class="pregunta">
+                <button onclick="toggleRespuesta(this)">6. Mencione las 10 reglas de conducta del Ejército.</button>
+                <div class="respuesta">
+                    Debe conocer las diez reglas: respeto, tratamiento a superiores, prohibición de corrupción,
+                    uso correcto de fuerza/equipo, autorización del Carrier, obediencia, vehículos oficiales,
+                    reglas del servidor, salida de base y equivalencias disciplinarias.
+                </div>
+            </div>
+
+            <div class="pregunta">
+                <button onclick="toggleRespuesta(this)">7. ¿Cómo debe responder ante una situación con un civil?</button>
+                <div class="respuesta">
+                    Debe demostrar seguridad, manejo de crisis, diplomacia, firmeza militar, legalidad
+                    y protección de la imagen de la facción.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CPT -> MAYOR -->
+    <section id="cpt-mayor" class="ascenso">
+        <div class="tituloAscenso">
+            <h2>CAPITÁN → MAYOR</h2>
+            <p>Evaluación avanzada de mando, normativa y situaciones prácticas.</p>
+        </div>
+
+        <div class="bloque">
+            <h3>📌 Responsabilidades de Mayor</h3>
+            <ul>
+                <li>Mantiene las funciones correspondientes al Capitán.</li>
+                <li>Asume responsabilidad sobre los rangos inferiores.</li>
+                <li>Debe demostrar capacidad de liderazgo y gestión del personal.</li>
+            </ul>
+        </div>
+
+        <div class="bloque">
+            <h3>📚 Evaluación</h3>
+
+            <div class="pregunta">
+                <button onclick="toggleRespuesta(this)">1. ¿Qué responsabilidades adicionales adquiere un Mayor?</button>
+                <div class="respuesta">
+                    Además de las funciones del Capitán, es responsable de los rangos inferiores
+                    y debe demostrar capacidad de liderazgo, organización y control del personal.
+                </div>
+            </div>
+
+            <div class="pregunta">
+                <button onclick="toggleRespuesta(this)">2. ¿Qué establece CHAT2?</button>
+                <div class="respuesta">
+                    Está prohibido insultar a la familia de otro jugador. La sanción indicada va desde
+                    240 minutos de mute hasta una suspensión de 3 días.
+                </div>
+            </div>
+
+            <div class="pregunta">
+                <button onclick="toggleRespuesta(this)">3. ¿Qué establece ABUSE1?</button>
+                <div class="respuesta">Prohíbe explotar bugs, vulnerabilidades o funciones no previstas para obtener ventajas.</div>
+            </div>
+
+            <div class="pregunta">
+                <button onclick="toggleRespuesta(this)">4. Mencione las 5 reglas básicas de Base.</button>
+                <div class="respuesta">No AFK, conducción autorizada, salida autorizada, cadena de mando y uso correcto del armamento.</div>
+            </div>
+
+            <div class="pregunta">
+                <button onclick="toggleRespuesta(this)">5. Mencione las 10 reglas del Ejército.</button>
+                <div class="respuesta">Respeto, tratamiento a superiores, cero corrupción, uso autorizado de fuerza/equipo, Carrier autorizado, obediencia, vehículos oficiales, reglas del servidor, salida autorizada y equivalencias disciplinarias.</div>
+            </div>
+
+            <div class="pregunta">
+                <button onclick="toggleRespuesta(this)">6. ¿Cómo debe tratar a un civil?</button>
+                <div class="respuesta">
+                    Debe actuar con seguridad, diplomacia y firmeza militar, resolver la situación de forma
+                    efectiva y legal y proteger la imagen de la facción.
+                </div>
+            </div>
+
+            <div class="pregunta">
+                <button onclick="toggleRespuesta(this)">7. ¿Qué se evalúa en las situaciones prácticas de Base?</button>
+                <div class="respuesta">
+                    Detección de amenazas, administración del personal, respuesta ante brechas de seguridad,
+                    capacidad de mando y toma de decisiones bajo presión.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MAYOR -> CORONEL -->
+    <section id="mayor-coronel" class="ascenso">
+        <div class="tituloAscenso">
+            <h2>MAYOR → CORONEL</h2>
+            <p>Ascenso sujeto principalmente a mérito, desempeño y evaluación de mando.</p>
+        </div>
+
+        <div class="bloque">
+            <h3>📌 Responsabilidades de Coronel</h3>
+            <ul>
+                <li>Asegurar que Cascos Duros y Cascos Suaves cumplan órdenes y actúen dentro de su alcance.</li>
+                <li>Actuar como General en funciones donde existan restricciones de rango.</li>
+                <li>Demostrar un desempeño digno del Traje Verde.</li>
+            </ul>
+        </div>
+
+        <div class="bloque alerta">
+            <h3>⚠️ Criterios generales de promoción</h3>
+            <ul>
+                <li>Desde Mayor en adelante, las promociones se determinan por mérito.</li>
+                <li>La pertenencia a una unidad es obligatoria para las promociones desde Sargento en adelante.</li>
+                <li>Debe existir buen desempeño tanto dentro de la unidad como en el Ejército.</li>
+                <li>El líder o los supervisores de la unidad pueden aplazar un ascenso hasta que exista una mejora.</li>
+                <li>Cualquier reprimenda aplaza el ascenso hasta que sea retirada.</li>
+            </ul>
+        </div>
+
+        <div class="bloque">
+            <h3>📚 Evaluación práctica</h3>
+            <p>
+                La evaluación puede incluir situaciones aleatorias de interacción con civiles y dos
+                situaciones críticas de Base. Se observa el liderazgo, la detección de amenazas,
+                la gestión del personal, la respuesta ante brechas de seguridad y la toma de decisiones
+                bajo presión.
+            </p>
+        </div>
+    </section>
+
+    <!-- MATERIAL GENERAL -->
+    <section class="bloque">
+        <h3>📚 MATERIAL GENERAL DE ESTUDIO</h3>
+
+        <div class="reglas">
+            <div class="regla">
+                <b>RP1 — Deathmatch</b><br>
+                Daño o muerte directa sin razón o contexto válido.
+            </div>
+
+            <div class="regla">
+                <b>RP2 — Auto Deathmatch</b><br>
+                Daño o destrucción de vehículos sin motivo legítimo de RP.
+            </div>
+
+            <div class="regla">
+                <b>RP11 — Zonas protegidas</b><br>
+                Prohíbe delitos y ataques en zonas protegidas y determinados lugares sensibles.
+            </div>
+
+            <div class="regla">
+                <b>RP13 — NRP de facción</b><br>
+                Prohíbe comportamientos contrarios al rol de la facción.
+            </div>
+
+            <div class="regla">
+                <b>RP14 — Acoso sexual</b><br>
+                Prohíbe conductas sexuales no consentidas y establece requisitos de consentimiento OOC.
+            </div>
+
+            <div class="regla">
+                <b>RP15 — Interrupción de operaciones</b><br>
+                Prohíbe provocar o interrumpir intencionalmente operaciones de la facción.
+            </div>
+
+            <div class="regla">
+                <b>CHAT1 — Insultos</b><br>
+                Prohíbe insultos sin razón válida de RP.
+            </div>
+
+            <div class="regla">
+                <b>CHAT2 — Familia</b><br>
+                Prohíbe insultar a la familia de otro jugador.
+            </div>
+
+            <div class="regla">
+                <b>ABUSE1 — Abuso</b><br>
+                Prohíbe aprovechar bugs, vulnerabilidades o funciones no previstas.
+            </div>
+        </div>
+
+        <p class="nota">
+            Las preguntas y criterios deben utilizarse como preparación para la evaluación oficial.
+            La autoridad evaluadora podrá plantear situaciones prácticas y preguntas aleatorias.
+        </p>
+    </section>
+
+    <div class="volverArriba">
+        <a class="volver" href="index.html">← VOLVER AL COE</a>
+    </div>
+
+</div>
+
+<script>
+function mostrarAscenso(id, boton){
+    document.querySelectorAll(".ascenso").forEach(function(seccion){
+        seccion.classList.remove("activo");
+    });
+
+    document.querySelectorAll(".selector button").forEach(function(b){
+        b.classList.remove("activo");
+    });
+
+    document.getElementById(id).classList.add("activo");
+    boton.classList.add("activo");
+
+    window.scrollTo({
+        top: document.querySelector(".selector").offsetTop - 20,
+        behavior: "smooth"
+    });
+}
+
+function toggleRespuesta(boton){
+    const pregunta = boton.parentElement;
+    pregunta.classList.toggle("abierta");
+}
+</script>
+
+</body>
+</html>
